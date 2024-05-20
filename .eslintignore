@@ -1,0 +1,6 @@
+/node_modules
+/dist
+/storybook-static
+
+# allow to format hidden folders
+!/.storybook
