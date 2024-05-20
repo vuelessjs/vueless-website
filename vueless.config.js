@@ -1,4 +1,5 @@
 export default {
-  color: {},
+  brand: "grayscale",
+  gray: "gray",
   component: {},
 };
