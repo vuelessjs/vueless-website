@@ -1,0 +1,21 @@
+name: Deploy Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+permissions: write-all
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: sudo apt-get install -y lftp
+      - run: npm ci
+      - run: npm run generate
+      - run: lftp -c "set ftp:ssl-force true; set ssl:verify-certificate false; open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOSTNAME }}; mirror -Renv --parallel=10 ./dist ./www"
