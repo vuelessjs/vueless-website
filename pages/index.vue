@@ -41,7 +41,7 @@
 
         <NuxtLink
           class="flex items-center justify-center gap-1 rounded-[0.25rem] bg-slate-900 px-[1.125rem] py-3 text-sm text-white max-sm:w-full"
-          to="/"
+          to="https://docs.vueless.com"
         >
           Get Started
           <MdiIcon icon="mdiArrowRight" />

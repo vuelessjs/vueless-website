@@ -29,8 +29,8 @@
 import VuelessLogo from "~/assets/svg/vueless-logo.svg";
 
 const navigationlinks = [
-  { name: "Docs", href: "/" },
-  { name: "Components", href: "/" },
-  { name: "Releases", href: "/" },
+  { name: "Docs", href: "https://docs.vueless.com" },
+  { name: "Components", href: "https://ui.vueless.com" },
+  { name: "Releases", href: "https://github.com/vuelessjs/vueless/releases" },
 ];
 </script>
