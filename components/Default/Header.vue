@@ -12,9 +12,9 @@
 
     <nav>
       <ul class="flex items-center gap-10 text-sm">
-        <li v-for="(link, idx) in navigationlinks" :key="idx">
+        <li v-for="(link, idx) in navigationLinks" :key="idx">
           <BaseLink
-            class="decoration-gray-800 decoration-dashed underline-offset-2 hover:underline"
+            class="decoration-gray-800 underline-offset-2 hover:underline"
             :to="link.href"
           >
             {{ link.name }}
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import VuelessLogo from "~/assets/svg/vueless-logo.svg";
 
-const navigationlinks = [
+const navigationLinks = [
   { name: "Docs", href: "https://docs.vueless.com" },
   { name: "Components", href: "https://ui.vueless.com" },
   { name: "Releases", href: "https://github.com/vuelessjs/vueless/releases" },
