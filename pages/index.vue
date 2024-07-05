@@ -2,10 +2,9 @@
   <div class="content-center justify-self-center -mt-10">
     <div class="flex max-w-[50rem] flex-col items-center">
       <span
-        v-if="vuelessPackage"
         class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
       >
-        Vueless UI {{ vuelessPackage.version }} is out! 🚀
+        Vueless UI {{ vuelessPackage?.version || "0.0.XXX" }} is out! 🚀
       </span>
 
       <h1
@@ -59,7 +58,7 @@ interface VuelessPackage {
 const installCommand = "npm install vueless @vueless/plugin-vite";
 
 const { data: vuelessPackage } = await useFetch<VuelessPackage>(
-  "https://registry.npmjs.org/vueless/latest",
+  "https://registry.npmjs.org/vueless/latest", { server: false }
 );
 
 const isCopyTimeout = ref(false);
