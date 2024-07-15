@@ -56,6 +56,16 @@ interface VuelessPackage {
   version: string;
 }
 
+useSeoMeta({
+  title: "Tailwind based UI Library for Modern Web Apps | Vueless UI",
+  //ogTitle: "My Amazing Site",
+  // eslint-disable-next-line vue/max-len
+  description: "Vueless UI simplifies the creation of stunning web applications with its huge collection of 60+ fully styled and 100% customisable UI components designed for Vue.js",
+  ogDescription: "This is my amazing site, let me tell you all about it.",
+  //ogImage: "https://example.com/image.png",
+  //twitterCard: "summary_large_image",
+})
+
 const installCommand = "npm install vueless @vueless/plugin-vite";
 
 const { data: vuelessPackage } = await useFetch<VuelessPackage>(
