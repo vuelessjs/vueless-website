@@ -3,8 +3,9 @@
     <div class="flex max-w-[50rem] flex-col items-center">
       <span
         class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
+        :class="!vuelessPackage?.version && 'animate-pulse'"
       >
-        Vueless UI {{ vuelessPackage?.version || "0.0.XXX" }} is out! 🚀
+        Vueless UI {{ vuelessPackage?.version || "0.0.XX" }} is out! 🚀
       </span>
 
       <h1
