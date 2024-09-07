@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div class="absolute z-0 top-[45%] w-[110vw] -rotate-12 whitespace-nowrap">
+    <div class="hidden md:block absolute z-0 top-[45%] w-screen -rotate-12 whitespace-nowrap">
       <div class="inline-flex gap-6 animate-rightToLeft">
         <ClientOnly>
           <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="absolute z-0 top-[45%] w-[110vw] rotate-12 whitespace-nowrap">
+    <div class="hidden md:block absolute z-0 top-[45%] w-screen rotate-12 whitespace-nowrap">
       <div class="inline-flex gap-6 animate-leftToRight">
         <ClientOnly>
           <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
@@ -34,7 +34,7 @@
     </div>
 
     <div
-      class="mx-auto grid h-full max-w-screen-2xl grid-rows-[fit-content(100%),1fr,fit-content(100%)] px-4 sm:px-8"
+      class="mx-auto grid h-full max-w-screen-2xl md:grid-rows-[fit-content(100%),1fr,fit-content(100%)] px-4 sm:px-8"
     >
       <DefaultHeader />
 
