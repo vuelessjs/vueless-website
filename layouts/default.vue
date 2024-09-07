@@ -9,8 +9,8 @@
       </div>
     </div>
 
-    <div class="absolute z-0 top-[45%] w-screen -rotate-12 overflow-hidden whitespace-nowrap">
-      <div class="flowing-container">
+    <div class="absolute -left-5 z-0 top-[45%] -rotate-12 w-[110vw] overflow-hidden whitespace-nowrap">
+      <div class="inline-flex animate-rightToLeft">
         <span
           v-for="n in numberOfLess"
           :key="n"
@@ -22,8 +22,8 @@
       </div>
     </div>
 
-    <div class="absolute z-0 top-[45%] w-screen rotate-12 overflow-hidden whitespace-nowrap">
-      <div class="flowing-container">
+    <div class="absolute -left-5 z-0 top-[45%] rotate-12 w-[110vw] overflow-hidden whitespace-nowrap">
+      <div class="inline-flex animate-leftToRight">
         <span
           v-for="n in numberOfLess"
           :key="n"
@@ -85,21 +85,6 @@ const getRandomLessText = () => {
 </script>
 
 <style>
-.flowing-container-wrapper {
-  position: absolute;
-  width: 200vw; /* Increase width to ensure full coverage when rotated */
-  height: 100vh;
-  left: -50vw; /* Offset to center the rotated container */
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.flowing-container {
-  display: inline-flex;
-  animation: flowing 30s linear infinite;
-}
-
 .v-popper__popper .v-popper__wrapper {
   transform: rotate(-12deg);
 }
@@ -111,14 +96,5 @@ const getRandomLessText = () => {
 
 .v-popper__arrow-outer {
   visibility: hidden;
-}
-
-@keyframes flowing {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-50%, 0);
-  }
 }
 </style>
