@@ -9,11 +9,11 @@
       </div>
     </div>
 
-    <div class="absolute -left-5 z-0 top-[45%] w-[110vw] -rotate-12 whitespace-nowrap">
-      <div class="inline-flex animate-rightToLeft">
+    <div class="absolute z-0 top-[45%] w-[110vw] -rotate-12 whitespace-nowrap">
+      <div class="inline-flex gap-6 animate-rightToLeft">
         <ClientOnly>
           <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
-            <span class="inline-block relative mr-6 text-7xl opacity-10 hover:cursor-default">
+            <span class="inline-block relative text-7xl opacity-5 hover:cursor-default hover:opacity-30">
               less
             </span>
           </BaseTooltip>
@@ -21,11 +21,11 @@
       </div>
     </div>
 
-    <div class="absolute -left-5 z-0 top-[45%] rotate-12 w-[110vw] whitespace-nowrap">
-      <div class="inline-flex animate-leftToRight">
+    <div class="absolute z-0 top-[45%] w-[110vw] rotate-12 whitespace-nowrap">
+      <div class="inline-flex gap-6 animate-leftToRight">
         <ClientOnly>
           <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
-            <span class="inline-block relative mr-6 text-7xl opacity-10 hover:cursor-default">
+            <span class="inline-block relative text-7xl opacity-5 hover:cursor-default hover:opacity-30">
               less
             </span>
           </BaseTooltip>
@@ -72,7 +72,7 @@ const lessText = [
   "Less bondage, more freedom ✊",
 ];
 
-const numberOfLess = 20;
+const numberOfLess = 40;
 
 const lessTexts = ref<string[]>([]);
 

@@ -16,8 +16,8 @@ module.exports = {
         "sans": ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        "rightToLeft": "rightToLeft 30s linear infinite",
-        "leftToRight": "leftToRight 30s linear infinite",
+        "rightToLeft": "rightToLeft 60s linear infinite",
+        "leftToRight": "leftToRight 60s linear infinite",
       },
       keyframes: {
         rightToLeft: {
