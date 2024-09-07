@@ -9,29 +9,27 @@
       </div>
     </div>
 
-    <div class="absolute -left-5 z-0 top-[45%] w-[110vw] -rotate-12 overflow-hidden whitespace-nowrap">
+    <div class="absolute -left-5 z-0 top-[45%] w-[110vw] -rotate-12 whitespace-nowrap">
       <div class="inline-flex animate-rightToLeft">
-        <span
-          v-for="n in numberOfLess"
-          :key="n"
-          v-tooltip="getRandomLessText()"
-          class="inline-block relative mr-6 text-7xl opacity-10 hover:cursor-default"
-        >
-          less
-        </span>
+        <ClientOnly>
+          <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
+            <span class="inline-block relative mr-6 text-7xl opacity-10 hover:cursor-default">
+              less
+            </span>
+          </BaseTooltip>
+        </ClientOnly>
       </div>
     </div>
 
-    <div class="absolute -left-5 z-0 top-[45%] rotate-12 w-[110vw] overflow-hidden whitespace-nowrap">
+    <div class="absolute -left-5 z-0 top-[45%] rotate-12 w-[110vw] whitespace-nowrap">
       <div class="inline-flex animate-leftToRight">
-        <span
-          v-for="n in numberOfLess"
-          :key="n"
-          v-tooltip="getRandomLessText()"
-          class="test inline-block mr-6 text-7xl opacity-10 hover:cursor-default"
-        >
-          less
-        </span>
+        <ClientOnly>
+          <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
+            <span class="inline-block relative mr-6 text-7xl opacity-10 hover:cursor-default">
+              less
+            </span>
+          </BaseTooltip>
+        </ClientOnly>
       </div>
     </div>
 
@@ -50,8 +48,6 @@
 <script setup lang="ts">
 import GradientTop from "~/assets/images/gradient-top.png";
 import GradientBottom from "~/assets/images/gradient-bottom.png";
-
-const numberOfLess = ref(20);
 
 const lessText = [
   "Less worry, more peace ☮️",
@@ -74,27 +70,39 @@ const lessText = [
   "Less routine, more creativity 🌈",
   "Less tasks, more family ❤️",
   "Less bondage, more freedom ✊",
-  "Less css, more love 💗",
 ];
 
-const getRandomLessText = () => {
-  const randomIndex = Math.floor(Math.random() * lessText.length);
+const numberOfLess = 20;
 
-  return lessText[randomIndex];
-};
+const lessTexts = ref<string[]>([]);
+
+function generateLessTexts() {
+  let shuffled = shuffleArray(lessText);
+
+  const result: string[] = [];
+
+  while (result.length < numberOfLess) {
+    if (shuffled.length === 0) {
+      shuffled = shuffleArray(lessText);
+    }
+
+    result.push(shuffled.pop()!);
+  }
+
+  lessTexts.value = result;
+}
+
+generateLessTexts();
+
+function shuffleArray(array: string[]): string[] {
+  const shuffled = [...array];
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled;
+}
 </script>
-
-<style>
-.v-popper__popper .v-popper__wrapper {
-  transform: rotate(12deg);
-}
-
-.v-popper__popper .v-popper__inner {
-  background-color: #E5E7EB;
-  color: #111827;
-}
-
-.v-popper__arrow-outer {
-  visibility: hidden;
-}
-</style>
