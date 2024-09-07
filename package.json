@@ -10,8 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@duskmoon/vue3-typed-js": "^0.0.4",
     "@nuxt/eslint": "^0.3.13",
     "@nuxtjs/google-fonts": "^3.2.0",
+    "floating-vue": "^5.2.2",
     "nuxt": "^3.12.3",
     "vue": "latest"
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="content-center justify-self-center -mt-10">
-    <div class="flex max-w-[50rem] flex-col items-center">
+    <div class="flex max-w-[70rem] flex-col items-center relative z-20 backdrop-blur">
       <span
         class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
         :class="!vuelessPackage?.version && 'animate-pulse'"
@@ -15,12 +15,16 @@
         <span class="md:-mx-3 rounded-lg leading-relaxed md:leading-normal bg-green-500/25 -mx-2 px-2 py-1 md:px-3 md:py-1"
           >UI Library</span
         >
-        for Modern Web Apps
+        for 
+        <br />
+        <Typed :options="options">
+          <span class="typing"/>
+        </Typed>
       </h1>
       <p class="mt-4 text-center text-sm sm:text-base md:text-lg text-gray-600">
-        Vueless UI simplifies the creation of stunning web applications with its
-        huge collection of 60+ fully styled and 100% customisable UI components
-        designed for Vue.js
+        Endless collection. Limitless customisation. Stressless coding.
+        <br />
+        All the stuff you need for your next Vue.js app.
       </p>
 
       <div class="mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-5 sm:flex-row">
@@ -52,9 +56,20 @@
 </template>
 
 <script setup lang="ts">
+import { Typed } from "@duskmoon/vue3-typed-js";
+import type { TypedOptions } from "@duskmoon/vue3-typed-js";
+
 interface VuelessPackage {
   version: string;
 }
+
+const options: TypedOptions = {
+  strings: ["Flawless Devs", "Boundless Ideas", "Effortless Coding"],
+  loop: true,
+  typeSpeed: 100,
+  startDelay: 100,
+  backSpeed: 50,
+};
 
 useSeoMeta({
   title: "Tailwind based UI Library for Modern Web Apps | Vueless UI",
@@ -92,3 +107,9 @@ function onClickCopy() {
   }, 1200);
 }
 </script>
+
+<style>
+  .typed-cursor {
+    font-weight: lighter;
+  }
+</style>
