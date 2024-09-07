@@ -15,7 +15,7 @@
         <span class="md:-mx-3 rounded-lg leading-relaxed md:leading-normal bg-green-500/25 -mx-2 px-2 py-1 md:px-3 md:py-1"
           >UI Library</span
         >
-        for 
+        for
         <br />
         <Typed :options="options">
           <span class="typing"/>
