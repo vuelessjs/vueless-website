@@ -1,6 +1,6 @@
 <template>
   <div class="content-center justify-self-center -mt-10">
-    <div class="flex max-w-[70rem] flex-col items-center relative z-20 backdrop-blur">
+    <div class="flex max-w-[50rem] flex-col items-center relative z-20 backdrop-blur">
       <span
         class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
         :class="!vuelessPackage?.version && 'animate-pulse'"
