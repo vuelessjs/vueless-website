@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen bg-gray-100">
-    <img :src="GradientTop" alt="" class="select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
+    <img :src="GradientTop" alt="" class="mt-safe-top select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
     <img :src="GradientBottom" alt="" class="select-none pointer-events-none absolute z-50 bottom-0 left-0" width="1400" height="1813" />
 
     <div v-if="false" class="w-full absolute lg:top-9 top-0 z-10">
@@ -13,7 +13,7 @@
       <div class="inline-flex gap-6 animate-rightToLeft">
         <ClientOnly>
           <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
-            <span class="inline-block relative text-7xl opacity-5 hover:cursor-default hover:opacity-30">
+            <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
               less
             </span>
           </BaseTooltip>
@@ -25,7 +25,7 @@
       <div class="inline-flex gap-6 animate-leftToRight">
         <ClientOnly>
           <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
-            <span class="inline-block relative text-7xl opacity-5 hover:cursor-default hover:opacity-30">
+            <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
               less
             </span>
           </BaseTooltip>
@@ -72,8 +72,6 @@ const lessText = [
   "Less bondage, more freedom ✊",
 ];
 
-const numberOfLess = 40;
-
 const lessTexts = ref<string[]>([]);
 
 function generateLessTexts() {
@@ -81,7 +79,7 @@ function generateLessTexts() {
 
   const result: string[] = [];
 
-  while (result.length < numberOfLess) {
+  while (result.length < lessText.length * 2) {
     if (shuffled.length === 0) {
       shuffled = shuffleArray(lessText);
     }
