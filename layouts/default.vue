@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="absolute z-10 w-screen max-h-fit bottom-16 md:top-[45%] md:rotate-12 whitespace-nowrap">
+      <div class="absolute z-10 w-screen max-h-fit bottom-28 md:top-[45%] md:rotate-12 whitespace-nowrap">
         <div class="inline-flex gap-6 animate-leftToRight">
           <ClientOnly>
             <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
