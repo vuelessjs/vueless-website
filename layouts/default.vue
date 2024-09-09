@@ -9,40 +9,42 @@
       </div>
     </div>
 
-    <div class="absolute z-0 w-screen hidden md:block top-[45%] -rotate-12 whitespace-nowrap">
-      <div class="inline-flex gap-6 animate-rightToLeft">
-        <ClientOnly>
-          <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
-            <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
-              less
-            </span>
-          </BaseTooltip>
-        </ClientOnly>
+    <div class="relative overflow-hidden">
+      <div class="absolute z-10 w-screen max-h-fit hidden md:block top-[45%] -rotate-12 whitespace-nowrap">
+        <div class="inline-flex gap-6 animate-rightToLeft">
+          <ClientOnly>
+            <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
+              <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
+                less
+              </span>
+            </BaseTooltip>
+          </ClientOnly>
+        </div>
       </div>
-    </div>
 
-    <div class="absolute z-10 w-screen bottom-16 md:block md:z-0 md:top-[45%] md:rotate-12 whitespace-nowrap">
-      <div class="inline-flex gap-6 animate-leftToRight">
-        <ClientOnly>
-          <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
-            <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30">
-              less
-            </span>
-          </BaseTooltip>
-        </ClientOnly>
+      <div class="absolute z-10 w-screen max-h-fit bottom-16 md:top-[45%] md:rotate-12 whitespace-nowrap">
+        <div class="inline-flex gap-6 animate-leftToRight">
+          <ClientOnly>
+            <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
+              <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30">
+                less
+              </span>
+            </BaseTooltip>
+          </ClientOnly>
+        </div>
       </div>
-    </div>
 
-    <div
-      class="mx-auto h-full max-w-screen-2xl px-4 sm:px-8
-      flex flex-col justify-between
-      md:grid md:justify-normal md:grid-rows-[fit-content(100%),1fr,fit-content(100%)]"
-    >
-      <DefaultHeader />
+      <div
+        class="relative mx-auto h-screen max-w-screen-2xl px-4 sm:px-8
+        flex flex-col justify-between
+        md:grid md:justify-normal md:grid-rows-[fit-content(100%),1fr,fit-content(100%)]"
+      >
+        <DefaultHeader />
 
-      <slot />
+        <slot />
 
-      <DefaultFooter />
+        <DefaultFooter />
+      </div>
     </div>
   </div>
 </template>

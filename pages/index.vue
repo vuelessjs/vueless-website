@@ -1,56 +1,58 @@
 <template>
-  <div class="content-center justify-self-center -mt-10">
-    <div class="flex max-w-[50rem] flex-col items-center relative z-20 backdrop-blur">
-      <span
-        class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
-        :class="!vuelessPackage?.version && 'animate-pulse'"
-      >
-        Vueless UI {{ vuelessPackage?.version || "0.0.XX" }} is out! 🚀
-      </span>
-
-      <h1
-        class="mt-6 text-center text-4xl font-bold text-slate-900 sm:text-6xl md:text-7xl"
-      >
-        A
-        <span class="md:-mx-3 rounded-lg leading-relaxed md:leading-normal bg-green-500/25 -mx-2 px-2 py-1 md:px-3 md:py-1"
-          >UI Library</span
+  <div class="content-center justify-self-center -mt-10 relative">
+    <div class="radial-gradient-container absolute z-10 w-full rounded-full md:min-w-[50rem] -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4">
+      <div class="flex max-w-[50rem] flex-col items-center relative z-20">
+        <span
+          class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
+          :class="!vuelessPackage?.version && 'animate-pulse'"
         >
-        for
-        <br />
-        <Typed :options="options">
-          <span class="typing"/>
-        </Typed>
-      </h1>
-      <p class="mt-4 text-center text-sm whitespace-break-spaces sm:text-base md:text-lg text-gray-600">
-        Endless collection. Limitless customisation. Stressless coding.
-      </p>
-      <p class="text-center text-sm sm:text-base md:text-lg text-gray-600">
-        All the stuff you need for your next Vue.js app.
-      </p>
+          Vueless UI {{ vuelessPackage?.version || "0.0.XX" }} is out! 🚀
+        </span>
 
-      <div class="mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-4 sm:flex-row">
-        <div
-          class="flex items-center gap-1 rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5"
+        <h1
+          class="mt-6 text-center text-4xl font-bold text-slate-900 sm:text-6xl md:text-7xl"
         >
-          <input
-            class="text-sm sm:w-80 w-full focus-within:outline-none focus:outline-none focus-visible:outline-none"
-            readonly
-            :value="installCommand"
-          />
-          <MdiIcon
-            :icon="copyIcon"
-            class="text-gray-500 hover:cursor-pointer"
-            @click="onClickCopy"
-          />
+          A
+          <span class="md:-mx-3 rounded-lg leading-relaxed md:leading-normal bg-green-500/25 -mx-2 px-2 py-1 md:px-3 md:py-1"
+            >UI Library</span
+          >
+          for
+          <br />
+          <Typed :options="options">
+            <span class="typing"/>
+          </Typed>
+        </h1>
+        <p class="mt-4 text-center text-sm whitespace-break-spaces sm:text-base md:text-lg text-gray-600">
+          Endless collection. Limitless customisation. Stressless coding.
+        </p>
+        <p class="text-center text-sm sm:text-base md:text-lg text-gray-600">
+          All the stuff you need for your next Vue.js app.
+        </p>
+
+        <div class="mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-4 sm:flex-row">
+          <div
+            class="flex items-center gap-1 rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5"
+          >
+            <input
+              class="text-sm sm:w-80 w-full focus-within:outline-none focus:outline-none focus-visible:outline-none"
+              readonly
+              :value="installCommand"
+            />
+            <MdiIcon
+              :icon="copyIcon"
+              class="text-gray-500 hover:cursor-pointer"
+              @click="onClickCopy"
+            />
+          </div>
+
+          <NuxtLink
+            class="border border-slate-900 flex items-center justify-center gap-1 rounded-lg bg-slate-900 px-[1.125rem] py-2.5 text-sm text-white max-sm:w-full"
+            to="https://docs.vueless.com"
+          >
+            Get Started
+            <MdiIcon icon="mdiArrowRight" />
+          </NuxtLink>
         </div>
-
-        <NuxtLink
-          class="border border-slate-900 flex items-center justify-center gap-1 rounded-lg bg-slate-900 px-[1.125rem] py-2.5 text-sm text-white max-sm:w-full"
-          to="https://docs.vueless.com"
-        >
-          Get Started
-          <MdiIcon icon="mdiArrowRight" />
-        </NuxtLink>
       </div>
     </div>
   </div>
@@ -116,6 +118,22 @@ function onClickCopy() {
   }
 
   .typed-cursor.typed-cursor--blink {
-  animation: typedjsBlink 1.2s infinite !important;
-}
+    animation: typedjsBlink 1.2s infinite !important;
+  }
+
+  .radial-gradient-container {
+  background: radial-gradient(
+    circle at center,
+    rgba(243,244,246) 0%,
+    rgba(243,244,246,0.9) 60%,
+    rgba(243,244,246,0.8) 65%,
+    rgba(243,244,246,0.7) 70%,
+    rgba(243,244,246,0.6) 75%,
+    rgba(243,244,246,0.5) 80%,
+    rgba(243,244,246,0.4) 85%,
+    rgba(243,244,246,0.3) 90%,
+    rgba(243,244,246,0.2) 95%,
+    rgba(243,244,246,0.1) 100%
+  )
+  }
 </style>
