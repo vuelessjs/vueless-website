@@ -35,9 +35,10 @@
       </div>
 
       <div
-        class="relative mx-auto h-screen max-w-screen-2xl px-4 sm:px-8
-        flex flex-col justify-between
-        md:grid md:justify-normal md:grid-rows-[fit-content(100%),1fr,fit-content(100%)]"
+        class="
+          mx-auto h-screen max-w-screen-2xl px-4 sm:px-8 flex flex-col justify-between
+          md:grid md:justify-normal md:grid-rows-[fit-content(100%),1fr,fit-content(100%)]
+        "
       >
         <DefaultHeader />
 
