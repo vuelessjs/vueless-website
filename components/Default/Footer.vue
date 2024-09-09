@@ -1,5 +1,5 @@
 <template>
-  <footer class="pt-3 pb-11">
+  <footer class="pt-3 pb-6 md:pb-11">
     <nav class="flex items-center">
       <ul class="text-sm flex items-center justify-between max-sm:flex-col gap-5 w-full">
         <ul class="flex gap-10 items-center">
@@ -10,7 +10,7 @@
             <BaseLink to="/">hello@vueless.com</BaseLink>
           </li>
         </ul>
-        <ul class="flex gap-10 items-center">
+        <ul class="md:flex gap-10 items-center hidden">
           <li>
             <BaseLink to="https://www.npmjs.com/package/vueless">npm</BaseLink>
           </li>
