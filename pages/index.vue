@@ -9,7 +9,7 @@
       </span>
 
       <h1
-        class="mt-6 text-center text-5xl font-bold text-slate-900 sm:text-6xl md:text-7xl"
+        class="mt-6 text-center text-4xl font-bold text-slate-900 sm:text-6xl md:text-7xl"
       >
         A
         <span class="md:-mx-3 rounded-lg leading-relaxed md:leading-normal bg-green-500/25 -mx-2 px-2 py-1 md:px-3 md:py-1"
@@ -21,15 +21,16 @@
           <span class="typing"/>
         </Typed>
       </h1>
-      <p class="mt-4 text-center text-sm sm:text-base md:text-lg text-gray-600">
+      <p class="mt-4 text-center text-sm whitespace-break-spaces sm:text-base md:text-lg text-gray-600">
         Endless collection. Limitless customisation. Stressless coding.
-        <br />
+      </p>
+      <p class="text-center text-sm sm:text-base md:text-lg text-gray-600">
         All the stuff you need for your next Vue.js app.
       </p>
 
-      <div class="mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-5 sm:flex-row">
+      <div class="mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-4 sm:flex-row">
         <div
-          class="flex items-center gap-1 rounded w-full sm:w-auto border border-gray-300 bg-white p-2.5"
+          class="flex items-center gap-1 rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5"
         >
           <input
             class="text-sm sm:w-80 w-full focus-within:outline-none focus:outline-none focus-visible:outline-none"
@@ -44,7 +45,7 @@
         </div>
 
         <NuxtLink
-          class="border border-slate-900 flex items-center justify-center gap-1 rounded bg-slate-900 px-[1.125rem] py-2.5 text-sm text-white max-sm:w-full"
+          class="border border-slate-900 flex items-center justify-center gap-1 rounded-lg bg-slate-900 px-[1.125rem] py-2.5 text-sm text-white max-sm:w-full"
           to="https://docs.vueless.com"
         >
           Get Started
@@ -69,6 +70,7 @@ const options: TypedOptions = {
   typeSpeed: 100,
   startDelay: 100,
   backSpeed: 50,
+  backDelay: 2000,
 };
 
 useSeoMeta({
@@ -112,4 +114,8 @@ function onClickCopy() {
   .typed-cursor {
     font-weight: lighter;
   }
+
+  .typed-cursor.typed-cursor--blink {
+  animation: typedjsBlink 1.2s infinite !important;
+}
 </style>

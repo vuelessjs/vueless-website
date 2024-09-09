@@ -9,10 +9,10 @@
       </div>
     </div>
 
-    <div class="hidden md:block absolute z-0 top-[45%] w-screen -rotate-12 whitespace-nowrap">
+    <div class="absolute z-0 w-screen hidden md:block top-[45%] -rotate-12 whitespace-nowrap">
       <div class="inline-flex gap-6 animate-rightToLeft">
         <ClientOnly>
-          <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
+          <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
             <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
               less
             </span>
@@ -21,11 +21,11 @@
       </div>
     </div>
 
-    <div class="hidden md:block absolute z-0 top-[45%] w-screen rotate-12 whitespace-nowrap">
+    <div class="absolute z-10 w-screen bottom-16 md:block md:z-0 md:top-[45%] md:rotate-12 whitespace-nowrap">
       <div class="inline-flex gap-6 animate-leftToRight">
         <ClientOnly>
-          <BaseTooltip v-for="(text, index) in lessTexts" :key="`${index}`" :text="text">
-            <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
+          <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
+            <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30">
               less
             </span>
           </BaseTooltip>
@@ -34,7 +34,9 @@
     </div>
 
     <div
-      class="mx-auto grid h-full max-w-screen-2xl md:grid-rows-[fit-content(100%),1fr,fit-content(100%)] px-4 sm:px-8"
+      class="mx-auto h-full max-w-screen-2xl px-4 sm:px-8
+      flex flex-col justify-between
+      md:grid md:justify-normal md:grid-rows-[fit-content(100%),1fr,fit-content(100%)]"
     >
       <DefaultHeader />
 
@@ -49,7 +51,7 @@
 import GradientTop from "~/assets/images/gradient-top.png";
 import GradientBottom from "~/assets/images/gradient-bottom.png";
 
-const lessText = [
+const lessTexts = [
   "Less worry, more peace ☮️",
   "Less screen time, more face time 👥",
   "Less chaos, more order ⚖️",
@@ -72,22 +74,22 @@ const lessText = [
   "Less bondage, more freedom ✊",
 ];
 
-const lessTexts = ref<string[]>([]);
+const generatedLessTexts = ref<string[]>([]);
 
 function generateLessTexts() {
-  let shuffled = shuffleArray(lessText);
+  let shuffled = shuffleArray(lessTexts);
 
   const result: string[] = [];
 
-  while (result.length < lessText.length * 2) {
+  while (result.length < lessTexts.length * 2) {
     if (shuffled.length === 0) {
-      shuffled = shuffleArray(lessText);
+      shuffled = shuffleArray(lessTexts);
     }
 
     result.push(shuffled.pop()!);
   }
 
-  lessTexts.value = result;
+  generatedLessTexts.value = result;
 }
 
 generateLessTexts();

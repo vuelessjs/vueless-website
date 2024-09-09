@@ -3,7 +3,7 @@
     class="flex md:items-center justify-between py-9 pb-4 gap-4 max-h-24"
   >
     <div class="flex">
-      <img :src="VuelessLogo" width="163" height="64" alt="Vueless Logo" />
+      <img :src="VuelessLogo" width="163" height="64" alt="Vueless UI" />
       <div
         class="-mt-1 h-fit rounded-full bg-red-500 px-1.5 py-0.5 text-[0.5rem] font-semibold uppercase text-white"
         v-text="'alfa'"
@@ -36,12 +36,12 @@
         'md:block',
         {
           'hidden': !isMenuOpen,
-          'fixed top-6 right-4 p-6 w-full max-w-xs rounded-lg shadow-lg bg-white z-30' : isMenuOpen
+          'absolute top-6 right-4 p-6 w-full max-w-xs rounded-lg shadow-lg bg-white z-30' : isMenuOpen
         }
       ]"
     >
       <ul
-        class="flex md:flex-row flex-col text-sm space-y-6 md:items-center md:gap-10 md:space-y-0"
+        class="flex md:flex-row flex-col text-sm md:items-center md:gap-10 gap-6"
       >
         <li v-for="(link, idx) in navigationLinks" :key="idx">
           <BaseLink
@@ -50,6 +50,24 @@
             @click="isMenuOpen = false"
           >
             {{ link.name }}
+          </BaseLink>
+        </li>
+        <li v-if="isMenuOpen" class="md:hidden">
+          <BaseLink
+            class="decoration-gray-800 pt-6 border-t border-slate-200 underline-offset-2 hover:underline block text-base"
+            to="https://www.npmjs.com/package/vueless"
+            @click="isMenuOpen = false"
+          >
+            npm
+          </BaseLink>
+        </li>
+        <li v-if="isMenuOpen" class="md:hidden">
+          <BaseLink
+            class="decoration-gray-800 underline-offset-2 hover:underline block text-base"
+            to="https://github.com/vuelessjs/vueless"
+            @click="isMenuOpen = false"
+          >
+            GitHub
           </BaseLink>
         </li>
       </ul>
