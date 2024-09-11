@@ -1,5 +1,5 @@
 <template>
-  <div class="content-center justify-self-center -mt-10 relative">
+  <div class="mt-safe-top content-center justify-self-center relative">
     <div class="radial-gradient-container absolute z-10 w-full rounded-full md:min-w-[50rem] -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4">
       <div class="flex flex-col items-center max-w-[50rem]">
         <span

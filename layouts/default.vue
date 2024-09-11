@@ -1,6 +1,6 @@
 <template>
-  <div class="h-screen bg-gray-100">
-    <img :src="GradientTop" alt="" class="mt-safe-top select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
+  <div class="h-screen bg-gray-100 mt-safe-top mb-safe-bottom">
+    <img :src="GradientTop" alt="" class="select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
     <img :src="GradientBottom" alt="" class="select-none pointer-events-none absolute z-50 bottom-0 left-0" width="1400" height="1813" />
 
     <div v-if="false" class="w-full absolute lg:top-9 top-0 z-10">
