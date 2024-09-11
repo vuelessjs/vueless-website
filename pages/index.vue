@@ -18,9 +18,13 @@
           >
           for
           <br />
-          <Typed :options="options">
-            <span class="typing"/>
-          </Typed>
+
+          <ClientOnly>
+            <Typed :options="options">
+              <span class="typing"/>
+            </Typed>
+          </ClientOnly>
+
         </h1>
         <p class="mt-4 text-center text-sm whitespace-break-spaces sm:text-base md:text-lg text-gray-600">
           Endless collection. Limitless customisation. Stressless coding.
@@ -66,24 +70,24 @@ interface VuelessPackage {
   version: string;
 }
 
+useSeoMeta({
+  title: "Vueless UI: Styleless UI Library based on Tailwind for Vue",
+  // eslint-disable-next-line vue/max-len
+  description: "Vueless UI simplifies the creation of stunning web applications with its huge collection of 60+ fully styled and 100% customisable UI components designed for Vue.js",
+  ogTitle: "Vueless UI",
+  ogDescription: "Styleless UI Library based on Tailwind CSS for Vue.js",
+  //ogImage: "https://example.com/image.png",
+  //twitterCard: "summary_large_image",
+})
+
 const options: TypedOptions = {
   strings: ["Flawless Devs", "Boundless Ideas", "Effortless Coding"],
   loop: true,
-  typeSpeed: 100,
+  typeSpeed: 75,
   startDelay: 100,
   backSpeed: 50,
   backDelay: 2000,
 };
-
-useSeoMeta({
-  title: "Tailwind based UI Library for Modern Web Apps | Vueless UI",
-  //ogTitle: "My Amazing Site",
-  // eslint-disable-next-line vue/max-len
-  description: "Vueless UI simplifies the creation of stunning web applications with its huge collection of 60+ fully styled and 100% customisable UI components designed for Vue.js",
-  ogDescription: "This is my amazing site, let me tell you all about it.",
-  //ogImage: "https://example.com/image.png",
-  //twitterCard: "summary_large_image",
-})
 
 const installCommand = "npm install vueless @vueless/plugin-vite";
 
