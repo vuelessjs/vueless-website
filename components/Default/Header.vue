@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex md:items-center justify-between py-9 pb-4 gap-4 max-h-24"
+    class="flex md:items-center justify-between pt-6 md:pt-9 pb-4 pr-0.5 max-h-24"
   >
     <div class="flex">
       <img :src="VuelessLogo" width="163" height="64" alt="Vueless UI" />
@@ -11,17 +11,13 @@
     </div>
 
     <button
-      class="md:hidden pl-2 pr-4 py-1 text-gray-500 hover:text-gray-700 focus:outline-none flex items-center justify-center z-50"
+      class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none flex items-center justify-center z-50"
       @click="toggleMenu"
     >
       <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="1" />
         <circle cx="12" cy="6" r="1" />
         <circle cx="12" cy="18" r="1" />
-      </svg>
-      <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18" />
-        <line x1="6" y1="6" x2="18" y2="18" />
       </svg>
     </button>
 
@@ -36,14 +32,14 @@
         'md:block',
         {
           'hidden': !isMenuOpen,
-          'absolute top-6 right-4 p-6 w-full max-w-xs rounded-lg shadow-lg bg-white z-30' : isMenuOpen
+          'absolute top-4 right-4 p-6 w-full max-w-xs rounded-lg shadow-lg bg-white z-30' : isMenuOpen
         }
       ]"
     >
       <ul
         class="flex md:flex-row flex-col text-sm md:items-center md:gap-10 gap-6"
       >
-        <li v-for="(link, idx) in navigationLinks" :key="idx">
+        <li v-for="(link, idx) in navigationLinks" :key="idx" :class="{ 'flex justify-between items-center': idx === 0 }">
           <BaseLink
             class="decoration-gray-800 underline-offset-2 hover:underline block text-base"
             :to="link.href"
@@ -51,6 +47,14 @@
           >
             {{ link.name }}
           </BaseLink>
+          <svg
+            v-if="idx === 0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="text-gray-700" :class="{ 'hidden': !isMenuOpen }" @click="isMenuOpen = false"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
         </li>
         <li v-if="isMenuOpen" class="md:hidden">
           <BaseLink

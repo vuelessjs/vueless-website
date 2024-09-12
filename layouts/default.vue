@@ -1,7 +1,7 @@
 <template>
-  <div class="h-screen bg-gray-100 mt-safe-top mb-safe-bottom">
-    <img :src="GradientTop" alt="" class="select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
-    <img :src="GradientBottom" alt="" class="select-none pointer-events-none absolute z-50 bottom-0 left-0" width="1400" height="1813" />
+  <div class="gradient-background md:bg-gray-100 min-h-screen">
+    <img :src="GradientTop" alt="" class="hidden md:block select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
+    <img :src="GradientBottom" alt="" class="hidden md:block select-none pointer-events-none absolute z-50 bottom-0 left-0" width="1400" height="1813" />
 
     <div v-if="false" class="w-full absolute lg:top-9 top-0 z-10">
       <div class="lg:w-fit w-full mx-auto px-4 py-1 lg:py-2 bg-red-500 text-white text-xs text-center lg:rounded-full">
@@ -13,7 +13,7 @@
       <div class="absolute z-10 w-screen max-h-fit hidden md:block top-[45%] -rotate-12 whitespace-nowrap">
         <div class="inline-flex gap-6 animate-rightToLeft">
           <ClientOnly>
-            <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
+            <BaseTooltip v-for="(text, index) in generatedLessTexts" :id="index" :key="`${index}`" :text="text">
               <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
                 less
               </span>
@@ -22,10 +22,10 @@
         </div>
       </div>
 
-      <div class="absolute z-10 w-screen max-h-fit bottom-28 md:top-[45%] md:rotate-12 whitespace-nowrap">
+      <div class="absolute z-10 w-screen max-h-fit bottom-24 md:top-[45%] md:rotate-12 whitespace-nowrap">
         <div class="inline-flex gap-6 animate-leftToRight">
           <ClientOnly>
-            <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
+            <BaseTooltip v-for="(text, index) in generatedLessTexts" :id="index" :key="`${index}`" :text="text">
               <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30">
                 less
               </span>
@@ -109,3 +109,15 @@ function shuffleArray(array: string[]): string[] {
   return shuffled;
 }
 </script>
+
+<style scoped>
+.gradient-background {
+  background: linear-gradient(to bottom, white, #f3f4f6);
+}
+
+@media (min-width: 768px) {
+  .gradient-background {
+    background: #f3f4f6;
+  }
+}
+</style>
