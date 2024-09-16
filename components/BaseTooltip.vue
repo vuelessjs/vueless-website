@@ -1,5 +1,5 @@
 <template>
-  <div v-click-outside="onMouseLeave" class="relative">
+  <div v-click-outside="onClickOutside" class="relative">
     <div @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @touchstart.prevent.stop="onTouchStart">
       <slot />
     </div>
@@ -33,5 +33,9 @@ function onMouseLeave(){
 
 function onTouchStart(){
   isShown.value = true
+}
+
+function onClickOutside(){
+  isShown.value = false
 }
 </script>
