@@ -1,6 +1,6 @@
 <template>
-  <div v-click-outside="() => isShown = false" class="relative">
-    <div @mouseenter="isShown = true" @mouseleave="isShown = false" @touchstart.prevent.stop="isShown = true">
+  <div v-click-outside="onMouseLeave" class="relative">
+    <div @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @touchstart.prevent.stop="onMouseEnter">
       <slot />
     </div>
     <div
@@ -22,4 +22,12 @@ const props = withDefaults(defineProps<{
 });
 
 const isShown = ref(false);
+
+function onMouseEnter(){
+  isShown.value = true
+}
+
+function onMouseLeave(){
+  isShown.value = false
+}
 </script>
