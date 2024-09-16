@@ -13,7 +13,7 @@
       <div class="absolute z-10 w-screen max-h-fit hidden md:block top-[45%] -rotate-12 whitespace-nowrap">
         <div class="inline-flex gap-6 animate-rightToLeft">
           <ClientOnly>
-            <BaseTooltip v-for="(text, index) in generatedLessTexts" :id="index" :key="`${index}`" :text="text">
+            <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
               <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
                 less
               </span>
@@ -25,7 +25,7 @@
       <div class="absolute z-10 w-screen max-h-fit bottom-24 md:top-[45%] md:rotate-12 whitespace-nowrap">
         <div class="inline-flex gap-6 animate-leftToRight">
           <ClientOnly>
-            <BaseTooltip v-for="(text, index) in generatedLessTexts" :id="index" :key="`${index}`" :text="text">
+            <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
               <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30">
                 less
               </span>

@@ -1,5 +1,5 @@
 <template>
-  <div v-click-outside="() => isShown = false" class="relative" :data-tooltip-id="id">
+  <div v-click-outside="() => isShown = false" class="relative">
     <div @mouseenter="isShown = true" @mouseleave="isShown = false" @touchstart.prevent.stop="isShown = true">
       <slot />
     </div>
@@ -17,10 +17,8 @@ import vClickOutside from "../directives/vClickOutside.js";
 
 const props = withDefaults(defineProps<{
   text: string;
-  id: number;
 }>(), {
   text: "Tooltip",
-  id: 0,
 });
 
 const isShown = ref(false);
