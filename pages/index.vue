@@ -1,5 +1,5 @@
 <template>
-  <div class="content-center justify-self-center -mt-10 relative">
+  <div class="mt-safe-top content-center justify-self-center relative">
     <div class="radial-gradient-container absolute z-10 w-full rounded-full md:min-w-[50rem] -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4">
       <div class="flex flex-col items-center max-w-[50rem]">
         <span
@@ -27,10 +27,7 @@
 
         </h1>
         <p class="mt-4 text-center text-sm whitespace-break-spaces sm:text-base md:text-lg text-gray-600">
-          Endless collection. Limitless customisation. Stressless coding.
-        </p>
-        <p class="text-center text-sm sm:text-base md:text-lg text-gray-600">
-          All the stuff you need for your next Vue.js app.
+          Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
         </p>
 
         <div class="mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-4 sm:flex-row">
@@ -125,19 +122,21 @@ function onClickCopy() {
     animation: typedjsBlink 1.2s infinite !important;
   }
 
-  .radial-gradient-container {
-    background: radial-gradient(
-      circle at center,
-      rgba(243,244,246) 0%,
-      rgba(243,244,246,0.9) 60%,
-      rgba(243,244,246,0.8) 65%,
-      rgba(243,244,246,0.7) 70%,
-      rgba(243,244,246,0.6) 75%,
-      rgba(243,244,246,0.5) 80%,
-      rgba(243,244,246,0.4) 85%,
-      rgba(243,244,246,0.3) 90%,
-      rgba(243,244,246,0.2) 95%,
-      rgba(243,244,246,0.1) 100%
-    )
+  @media (min-width: 768px) {
+    .radial-gradient-container {
+      background: radial-gradient(
+        circle at center,
+        rgba(243,244,246) 0%,
+        rgba(243,244,246,0.9) 60%,
+        rgba(243,244,246,0.8) 65%,
+        rgba(243,244,246,0.7) 70%,
+        rgba(243,244,246,0.6) 75%,
+        rgba(243,244,246,0.5) 80%,
+        rgba(243,244,246,0.4) 85%,
+        rgba(243,244,246,0.3) 90%,
+        rgba(243,244,246,0.2) 95%,
+        rgba(243,244,246,0.1) 100%
+      )
+    }
   }
 </style>
