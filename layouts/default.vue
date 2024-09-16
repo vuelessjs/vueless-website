@@ -26,7 +26,7 @@
         <div class="inline-flex gap-6 animate-leftToRight">
           <ClientOnly>
             <BaseTooltip v-for="(text, index) in generatedLessTexts" :id="index" :key="`${index}`" :text="text">
-              <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30">
+              <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30 focus:opacity-30">
                 less
               </span>
             </BaseTooltip>
