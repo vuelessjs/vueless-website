@@ -1,5 +1,5 @@
 <template>
-  <div class="gradient-background md:bg-gray-100 min-h-screen">
+  <div class="max-md:bg-gradient-to-b from-white to-gray-100 md:bg-gray-100 h-screen">
     <img :src="GradientTop" alt="" class="hidden md:block select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
     <img :src="GradientBottom" alt="" class="hidden md:block select-none pointer-events-none absolute z-50 bottom-0 left-0" width="1400" height="1813" />
 
@@ -26,7 +26,7 @@
         <div class="inline-flex gap-6 animate-leftToRight">
           <ClientOnly>
             <BaseTooltip v-for="(text, index) in generatedLessTexts" :id="index" :key="`${index}`" :text="text">
-              <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30 focus:opacity-30">
+              <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30">
                 less
               </span>
             </BaseTooltip>
@@ -109,15 +109,3 @@ function shuffleArray(array: string[]): string[] {
   return shuffled;
 }
 </script>
-
-<style scoped>
-.gradient-background {
-  background: linear-gradient(to bottom, white, #f3f4f6);
-}
-
-@media (min-width: 768px) {
-  .gradient-background {
-    background: #f3f4f6;
-  }
-}
-</style>
