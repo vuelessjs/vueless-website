@@ -10,29 +10,27 @@
     </div>
 
     <div class="relative overflow-hidden">
-      <div class="absolute z-10 w-screen max-h-fit collapse lg:visible top-[45%] -rotate-12 whitespace-nowrap">
-        <div class="inline-flex gap-6 animate-rightToLeft">
-          <ClientOnly>
-            <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
-              <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
-                less
-              </span>
-            </BaseTooltip>
-          </ClientOnly>
+      <ClientOnly>
+        <div class="absolute z-10 w-screen max-h-fit hidden lg:block top-[45%] -rotate-12 whitespace-nowrap">
+          <div class="inline-flex gap-6 animate-rightToLeft">
+              <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
+                <span class="inline-block relative text-7xl opacity-5 select-none hover:opacity-30">
+                  less
+                </span>
+              </BaseTooltip>
+          </div>
         </div>
-      </div>
 
-      <div class="absolute z-10 w-screen max-h-fit md:max-lg:bottom-12 bottom-24 lg:top-[45%] lg:rotate-12 whitespace-nowrap">
-        <div class="inline-flex gap-6 animate-leftToRight">
-          <ClientOnly>
-            <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
-              <span class="inline-block relative text-4xl lg:text-7xl opacity-5 select-none hover:opacity-30">
-                less
-              </span>
-            </BaseTooltip>
-          </ClientOnly>
+        <div class="absolute z-10 w-screen max-h-fit md:max-lg:bottom-12 bottom-24 lg:top-[45%] lg:rotate-12 whitespace-nowrap">
+          <div class="inline-flex gap-6 animate-leftToRight">
+              <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
+                <span class="inline-block relative text-4xl lg:text-7xl opacity-5 select-none hover:opacity-30">
+                  less
+                </span>
+              </BaseTooltip>
+          </div>
         </div>
-      </div>
+      </ClientOnly>
 
       <div
         class="

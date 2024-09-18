@@ -32,7 +32,7 @@ function onMouseLeave(){
 }
 
 function onTouchStart(){
-  isShown.value = true
+  isShown.value = !isShown.value
 }
 
 function onClickOutside(){
