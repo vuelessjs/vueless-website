@@ -1,7 +1,7 @@
 <template>
-  <div class="max-md:bg-gradient-to-b from-white to-gray-100 md:bg-gray-100 h-screen">
-    <img :src="GradientTop" alt="" class="hidden md:block select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
-    <img :src="GradientBottom" alt="" class="hidden md:block select-none pointer-events-none absolute z-50 bottom-0 left-0" width="1400" height="1813" />
+  <div class="max-md:bg-gradient-to-b from-white to-gray-100 lg:bg-gray-100 min-h-screen">
+    <img :src="GradientTop" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
+    <img :src="GradientBottom" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 bottom-0 left-0" width="1400" height="1813" />
 
     <div v-if="false" class="w-full absolute lg:top-9 top-0 z-10">
       <div class="lg:w-fit w-full mx-auto px-4 py-1 lg:py-2 bg-red-500 text-white text-xs text-center lg:rounded-full">
@@ -10,7 +10,7 @@
     </div>
 
     <div class="relative overflow-hidden">
-      <div class="absolute z-10 w-screen max-h-fit hidden md:block top-[45%] -rotate-12 whitespace-nowrap">
+      <div class="absolute z-10 w-screen max-h-fit collapse lg:visible top-[45%] -rotate-12 whitespace-nowrap">
         <div class="inline-flex gap-6 animate-rightToLeft">
           <ClientOnly>
             <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
@@ -22,11 +22,11 @@
         </div>
       </div>
 
-      <div class="absolute z-10 w-screen max-h-fit bottom-24 md:top-[45%] md:rotate-12 whitespace-nowrap">
+      <div class="absolute z-10 w-screen max-h-fit md:max-lg:bottom-12 bottom-24 lg:top-[45%] lg:rotate-12 whitespace-nowrap">
         <div class="inline-flex gap-6 animate-leftToRight">
           <ClientOnly>
             <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
-              <span class="inline-block relative text-4xl md:text-7xl opacity-5 select-none hover:opacity-30">
+              <span class="inline-block relative text-4xl lg:text-7xl opacity-5 select-none hover:opacity-30">
                 less
               </span>
             </BaseTooltip>
@@ -36,8 +36,8 @@
 
       <div
         class="
-          mx-auto h-screen max-w-screen-2xl px-4 sm:px-8 flex flex-col justify-between
-          md:grid md:justify-normal md:grid-rows-[fit-content(100%),1fr,fit-content(100%)]
+          mx-auto min-h-screen max-w-screen-2xl px-4 sm:px-8 flex flex-col justify-between
+          lg:grid lg:justify-normal lg:grid-rows-[fit-content(100%),1fr,fit-content(100%)]
         "
       >
         <DefaultHeader />

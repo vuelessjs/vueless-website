@@ -1,6 +1,11 @@
 <template>
-  <div class="mt-safe-top content-center justify-self-center relative">
-    <div class="radial-gradient-container absolute z-10 w-full rounded-full md:min-w-[50rem] -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4">
+  <div class="content-center justify-self-center relative">
+    <div
+      class="
+        radial-gradient-container flex justify-center w-full rounded-full lg:min-w-[50rem]
+        absolute z-10 -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4
+        md:max-lg:static md:max-lg:-translate-x-0 md:max-lg:-translate-y-0 md:max-lg:left-0 md:max-lg:top-0
+      ">
       <div class="flex flex-col items-center max-w-[50rem]">
         <span
           class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
@@ -10,10 +15,10 @@
         </span>
 
         <h1
-          class="mt-6 text-center text-4xl font-bold text-slate-900 sm:text-6xl md:text-7xl"
+          class="mt-6 text-center font-bold text-slate-900 text-4xl md:text-5xl lg:text-7xl"
         >
           A
-          <span class="md:-mx-3 rounded-lg leading-relaxed md:leading-normal bg-green-500/25 -mx-2 px-2 py-1 md:px-3 md:py-1"
+          <span class="lg:-mx-3 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25 -mx-2 px-2 py-1 lg:px-3 lg:py-1"
             >UI Library</span
           >
           for
@@ -26,11 +31,11 @@
           </ClientOnly>
 
         </h1>
-        <p class="mt-4 text-center text-sm whitespace-break-spaces sm:text-base md:text-lg text-gray-600">
+        <p class="mt-4 text-center text-sm whitespace-break-spaces sm:text-base lg:text-lg text-gray-600">
           Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
         </p>
 
-        <div class="mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-4 sm:flex-row">
+        <div class="mt-4 lg:mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-4 sm:flex-row">
           <div
             class="flex items-center gap-1 rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5"
           >
@@ -122,7 +127,7 @@ function onClickCopy() {
     animation: typedjsBlink 1.2s infinite !important;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .radial-gradient-container {
       background: radial-gradient(
         circle at center,
