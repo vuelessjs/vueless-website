@@ -5,7 +5,7 @@
     </div>
     <div
       v-show="isShown"
-      class="bg-gray-200 text-black text-sm whitespace-nowrap absolute -top-10 p-2 md:-top-16 md:p-4 rounded-2xl left-1/2 transform -translate-x-1/2"
+      class="bg-gray-200 text-black text-sm whitespace-nowrap absolute -top-10 p-2 lg:-top-16 lg:p-4 rounded-2xl left-1/2 transform -translate-x-1/2"
     >
       {{ props.text }}
     </div>
@@ -32,7 +32,7 @@ function onMouseLeave(){
 }
 
 function onTouchStart(){
-  isShown.value = true
+  isShown.value = !isShown.value
 }
 
 function onClickOutside(){

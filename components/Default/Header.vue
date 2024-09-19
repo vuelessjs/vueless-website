@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex md:items-center justify-between pt-6 md:pt-9 pb-4 pr-0.5 max-h-24"
+    class="flex lg:items-center justify-between pt-6 lg:pt-9 pb-4 pr-0.5 max-h-24"
   >
     <div class="flex">
       <img :src="VuelessLogo" width="163" height="64" alt="Vueless UI" />
@@ -11,7 +11,7 @@
     </div>
 
     <button
-      class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none flex items-center justify-center z-50"
+      class="lg:hidden text-gray-500 hover:text-gray-700 focus:outline-none flex items-center justify-center z-50"
       @click="toggleMenu"
     >
       <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -23,13 +23,13 @@
 
     <div
       v-if="isMenuOpen"
-      class="fixed inset-0 bg-black/20 backdrop-blur-sm z-30"
+      class="fixed inset-0 bg-black/10 max-md:bg-black/20 backdrop-blur-sm z-30"
       @click="closeMenu"
     />
 
     <nav
       :class="[
-        'md:block',
+        'lg:block',
         {
           'hidden': !isMenuOpen,
           'absolute top-4 right-4 p-6 w-full max-w-xs rounded-lg shadow-lg bg-white z-30' : isMenuOpen
@@ -37,7 +37,7 @@
       ]"
     >
       <ul
-        class="flex md:flex-row flex-col text-sm md:items-center md:gap-10 gap-6"
+        class="flex lg:flex-row flex-col text-sm lg:items-center lg:gap-10 gap-6"
       >
         <li v-for="(link, idx) in navigationLinks" :key="idx" :class="{ 'flex justify-between items-center': idx === 0 }">
           <BaseLink
@@ -56,7 +56,7 @@
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </li>
-        <li v-if="isMenuOpen" class="md:hidden">
+        <li v-if="isMenuOpen" class="lg:hidden">
           <BaseLink
             class="decoration-gray-800 pt-6 border-t border-slate-200 underline-offset-2 hover:underline block text-base"
             to="https://www.npmjs.com/package/vueless"
@@ -65,7 +65,7 @@
             npm
           </BaseLink>
         </li>
-        <li v-if="isMenuOpen" class="md:hidden">
+        <li v-if="isMenuOpen" class="lg:hidden">
           <BaseLink
             class="decoration-gray-800 underline-offset-2 hover:underline block text-base"
             to="https://github.com/vuelessjs/vueless"
