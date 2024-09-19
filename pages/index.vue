@@ -3,8 +3,7 @@
     <div
       class="
         radial-gradient-container flex justify-center w-full rounded-full lg:min-w-[50rem]
-        absolute z-10 -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4
-        md:max-lg:static md:max-lg:-translate-x-0 md:max-lg:-translate-y-0 md:max-lg:left-0 md:max-lg:top-0
+        lg:absolute lg:z-10 lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4
       ">
       <div class="flex flex-col items-center max-w-[50rem]">
         <span
