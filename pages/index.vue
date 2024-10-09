@@ -5,21 +5,19 @@
         radial-gradient-container flex justify-center w-full rounded-full lg:min-w-[50rem]
         lg:absolute lg:z-10 lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4
       ">
-      <div class="flex flex-col items-center max-w-[50rem]">
-        <span
-          class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
+      <UCol align="center" gap="2xs" class="max-w-[50rem]">
+        <UText
           :class="!vuelessPackage?.version && 'animate-pulse'"
+          :config="versionTextConfig"
         >
           Vueless UI {{ vuelessPackage?.version || "0.0.XX" }} is out! 🚀
-        </span>
+        </UText>
 
-        <h1
-          class="mt-6 text-center font-bold text-slate-900 text-4xl md:text-5xl lg:text-7xl"
-        >
+        <UHeader size="xl" :config="headerConfig">
           A
-          <span class="lg:-mx-3 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25 -mx-2 px-2 py-1 lg:px-3 lg:py-1"
-            >UI Library</span
-          >
+            <UText :config="accentTextConfig" class="text-4xl">
+              UI Library
+            </UText>
           for
           <br />
 
@@ -29,36 +27,41 @@
             </Typed>
           </ClientOnly>
 
-        </h1>
-        <p class="mt-4 text-center text-sm whitespace-break-spaces sm:text-base lg:text-lg text-gray-600">
+        </UHeader>
+        <UText align="center" :config="secondaryTextConfig">
           Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
-        </p>
+        </UText>
 
-        <div class="mt-4 lg:mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-4 sm:flex-row">
-          <div
-            class="flex items-center gap-1 rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5"
-          >
-            <input
-              class="text-sm sm:w-80 w-full focus-within:outline-none focus:outline-none focus-visible:outline-none"
+        <URow align="stretch" :config="wrapperRowConfig">
+          <URow align="center" gap="2xs" :config="inputRowConfig">
+            <UInput
               readonly
-              :value="installCommand"
-            />
-            <MdiIcon
-              :icon="copyIcon"
-              class="text-gray-500 hover:cursor-pointer"
-              @click="onClickCopy"
-            />
-          </div>
+              :config="inputConfig"
+              :model-value="installCommand"
+            >
+              <template #right-icon>
+                <MdiIcon
+                :icon="copyIcon"
+                class="text-gray-500 hover:cursor-pointer"
+                @click="onClickCopy"
+              />
+              </template>
+            </UInput>
+          </URow>
 
-          <NuxtLink
-            class="border border-slate-900 flex items-center justify-center gap-1 rounded-lg bg-slate-900 px-[1.125rem] py-2.5 text-sm text-white max-sm:w-full"
-            to="https://docs.vueless.com"
+          <ULink
+            label="Get Started"
+            href="https://docs.vueless.com"
+            :underlined=false
+            color="white"
+            :config="linkConfig"
           >
-            Get Started
-            <MdiIcon icon="mdiArrowRight" />
-          </NuxtLink>
-        </div>
-      </div>
+            <template #right>
+              <MdiIcon icon="mdiArrowRight" color="white" />
+            </template>
+          </ULink>
+        </URow>
+      </UCol>
     </div>
   </div>
 </template>
@@ -95,6 +98,43 @@ const installCommand = "npm install vueless @vueless/plugin-vite";
 const { data: vuelessPackage } = await useFetch<VuelessPackage>(
   "https://registry.npmjs.org/vueless/latest", { server: false }
 );
+
+const versionTextConfig = {
+  wrapper: "rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600",
+}
+
+const headerConfig = {
+  header: "mt-6 text-center font-bold text-slate-900 md:text-5xl lg:text-7xl",
+}
+
+const accentTextConfig = {
+  wrapper: `inline-block lg:-mx-3 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25
+  -mx-2 px-2 py-1 lg:px-3 lg:py-3 font-bold text-slate-900 md:text-5xl lg:text-7xl`,
+}
+
+const secondaryTextConfig = {
+  wrapper: "mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600",
+}
+
+const wrapperRowConfig = {
+  wrapper: "mt-4 lg:mt-11 flex-col w-full sm:w-auto sm:flex-row",
+}
+
+const inputRowConfig = {
+  wrapper: "rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5 pr-0",
+}
+
+const inputConfig = {
+  wrapper: "border-none p-0 w-full gap-1 focus-within:ring-0 focus-within:ring-offset-0",
+  input: "sm:w-80 p-0",
+}
+
+const linkConfig = {
+  wrapper: `
+    border border-slate-900 flex items-center justify-center gap-1 rounded-lg
+    bg-slate-900 px-[1.125rem] py-2.5 max-sm:w-full
+  `,
+}
 
 const isCopyTimeout = ref(false);
 

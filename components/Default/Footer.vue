@@ -4,21 +4,43 @@
       <ul class="text-sm flex items-center justify-center lg:justify-between max-sm:flex-col gap-5 w-full">
         <ul class="flex max-sm:flex-col-reverse items-center gap-3 lg:gap-10 lg:flex-row">
           <li>
-            <BaseLink to="https://github.com/vuelessjs/vueless/blob/main/LICENSE">MIT License</BaseLink>
+            <ULink
+              label="MIT License"
+              href="https://github.com/vuelessjs/vueless/blob/main/LICENSE"
+              :config="linkConfig"
+            />
           </li>
           <li>
-            <BaseLink to="/">hello@vueless.com</BaseLink>
+            <ULink
+              label="hello@vueless.com"
+              href="/"
+              :config="linkConfig"
+            />
           </li>
         </ul>
         <ul class="lg:flex gap-10 items-center hidden">
           <li>
-            <BaseLink to="https://www.npmjs.com/package/vueless">npm</BaseLink>
+            <ULink
+              label="npm"
+              href="https://www.npmjs.com/package/vueless"
+              :config="linkConfig"
+            />
           </li>
           <li>
-            <BaseLink to="https://github.com/vuelessjs/vueless">GitHub</BaseLink>
+            <ULink
+              label="GitHub"
+              href="https://github.com/vuelessjs/vueless"
+              :config="linkConfig"
+            />
           </li>
         </ul>
       </ul>
     </nav>
   </footer>
 </template>
+
+<script setup lang="ts">
+const linkConfig = {
+  link: "font-semibold",
+}
+</script>
