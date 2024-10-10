@@ -5,8 +5,8 @@ export default {
     ULink,
     UIcon: {
       defaults: {
-        library: "@material-symbols/svg-500",
-        style: "outlined",
+        library: "@material-symbols",
+        weight: 500,
       }
     }
   },

@@ -33,34 +33,32 @@
           Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
         </UText>
 
-        <URow align="stretch" class="mt-4 lg:mt-11 flex-col w-full sm:w-auto sm:flex-row">
-          <URow align="center" gap="2xs" class="rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5 pr-0">
-            <UInput
-              readonly
-              :config="inputConfig"
-              :model-value="installCommand"
-            >
-              <template #right-icon>
-                <MdiIcon
-                  :icon="copyIcon"
-                  class="text-gray-500 hover:cursor-pointer"
-                  @click="onClickCopy"
-                />
-              </template>
-            </UInput>
-            <UIcon name="star" color="red" />
-          </URow>
+        <URow align="stretch" justify="center" class="mt-4 lg:mt-11">
+          <UInput
+            class="w-[23rem]"
+            :model-value="installCommand"
+            readonly
+          >
+            <template #right-icon>
+              <UIcon name="star" size="sm" color="red"/>
+              <MdiIcon
+                :icon="copyIcon"
+                class="text-gray-500 hover:cursor-pointer"
+                @click="onClickCopy"
+              />
+            </template>
+          </UInput>
 
           <ULink
-            label="Get Started"
             href="https://docs.vueless.com"
-            :underlined=false
-            color="white"
-            :config="linkConfig"
+            target-blank
           >
-            <template #right>
-              <MdiIcon icon="mdiArrowRight" color="white" />
-            </template>
+            <UButton size="sm" label="Get Started">
+              <template #right>
+                <MdiIcon icon="mdiArrowRight" color="white" />
+              </template>
+            </UButton>
+
           </ULink>
         </URow>
       </UCol>
@@ -103,18 +101,6 @@ const { data: vuelessPackage } = await useFetch<VuelessPackage>(
 
 const headerConfig = {
   header: "mt-6 text-center font-bold text-slate-900 md:text-5xl lg:text-7xl",
-}
-
-const inputConfig = {
-  wrapper: "border-none p-0 w-full gap-1 focus-within:ring-0 focus-within:ring-offset-0",
-  input: "sm:w-80 p-0",
-}
-
-const linkConfig = {
-  wrapper: `
-    border border-slate-900 flex items-center justify-center gap-1 rounded-lg
-    bg-slate-900 px-[1.125rem] py-2.5 max-sm:w-full
-  `,
 }
 
 const isCopyTimeout = ref(false);
