@@ -7,14 +7,12 @@
             <ULink
               label="MIT License"
               href="https://github.com/vuelessjs/vueless/blob/main/LICENSE"
-              :config="linkConfig"
             />
           </li>
           <li>
             <ULink
               label="hello@vueless.com"
               href="/"
-              :config="linkConfig"
             />
           </li>
         </ul>
@@ -23,14 +21,12 @@
             <ULink
               label="npm"
               href="https://www.npmjs.com/package/vueless"
-              :config="linkConfig"
             />
           </li>
           <li>
             <ULink
               label="GitHub"
               href="https://github.com/vuelessjs/vueless"
-              :config="linkConfig"
             />
           </li>
         </ul>
@@ -38,9 +34,3 @@
     </nav>
   </footer>
 </template>
-
-<script setup lang="ts">
-const linkConfig = {
-  link: "font-semibold",
-}
-</script>

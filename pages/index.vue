@@ -6,18 +6,19 @@
         lg:absolute lg:z-10 lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4
       ">
       <UCol align="center" gap="2xs" class="max-w-[50rem]">
-        <UText
+        <span
+          class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
           :class="!vuelessPackage?.version && 'animate-pulse'"
-          :config="versionTextConfig"
         >
           Vueless UI {{ vuelessPackage?.version || "0.0.XX" }} is out! 🚀
-        </UText>
+        </span>
 
         <UHeader size="xl" :config="headerConfig">
           A
-            <UText :config="accentTextConfig" class="text-4xl">
+            <span class="inline-flex max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
+            >
               UI Library
-            </UText>
+            </span>
           for
           <br />
 
@@ -28,12 +29,12 @@
           </ClientOnly>
 
         </UHeader>
-        <UText align="center" :config="secondaryTextConfig">
+        <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600">
           Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
         </UText>
 
-        <URow align="stretch" :config="wrapperRowConfig">
-          <URow align="center" gap="2xs" :config="inputRowConfig">
+        <URow align="stretch" class="mt-4 lg:mt-11 flex-col w-full sm:w-auto sm:flex-row">
+          <URow align="center" gap="2xs" class="rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5 pr-0">
             <UInput
               readonly
               :config="inputConfig"
@@ -41,12 +42,13 @@
             >
               <template #right-icon>
                 <MdiIcon
-                :icon="copyIcon"
-                class="text-gray-500 hover:cursor-pointer"
-                @click="onClickCopy"
-              />
+                  :icon="copyIcon"
+                  class="text-gray-500 hover:cursor-pointer"
+                  @click="onClickCopy"
+                />
               </template>
             </UInput>
+            <UIcon name="star" color="red" />
           </URow>
 
           <ULink
@@ -99,29 +101,8 @@ const { data: vuelessPackage } = await useFetch<VuelessPackage>(
   "https://registry.npmjs.org/vueless/latest", { server: false }
 );
 
-const versionTextConfig = {
-  wrapper: "rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600",
-}
-
 const headerConfig = {
   header: "mt-6 text-center font-bold text-slate-900 md:text-5xl lg:text-7xl",
-}
-
-const accentTextConfig = {
-  wrapper: `inline-block lg:-mx-3 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25
-  -mx-2 px-2 py-1 lg:px-3 lg:py-3 font-bold text-slate-900 md:text-5xl lg:text-7xl`,
-}
-
-const secondaryTextConfig = {
-  wrapper: "mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600",
-}
-
-const wrapperRowConfig = {
-  wrapper: "mt-4 lg:mt-11 flex-col w-full sm:w-auto sm:flex-row",
-}
-
-const inputRowConfig = {
-  wrapper: "rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5 pr-0",
 }
 
 const inputConfig = {
