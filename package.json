@@ -7,18 +7,19 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "npx @vueless/web-types && nuxt prepare"
   },
   "dependencies": {
     "@duskmoon/vue3-typed-js": "^0.0.4",
     "@nuxt/eslint": "^0.3.13",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@vueless/module-nuxt": "^0.0.8",
+    "@vueless/module-nuxt": "^0.0.11",
     "nuxt": "^3.13.2",
     "vue": "latest"
   },
   "devDependencies": {
     "@material-symbols/svg-500": "^0.24.0",
+    "@vueless/web-types": "^0.0.17",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "nuxt-mdi": "^1.1.6",
