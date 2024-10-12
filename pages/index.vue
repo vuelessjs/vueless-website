@@ -15,7 +15,7 @@
 
         <UHeader size="xl" :config="headerConfig">
           A
-            <span class="inline-flex max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
+            <span class="inline-flex max-h-14 lg:max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
             >
               UI Library
             </span>
@@ -29,18 +29,17 @@
           </ClientOnly>
 
         </UHeader>
-        <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600">
+        <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600 font-medium">
           Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
         </UText>
 
-        <URow align="stretch" justify="center" class="mt-4 lg:mt-11">
+        <URow align="stretch" justify="center" class="mt-4 lg:mt-11 sm:flex-row">
           <UInput
-            class="w-[23rem]"
             :model-value="installCommand"
             readonly
+            class="max-w-[23rem]"
           >
             <template #right-icon>
-              <UIcon name="star" size="sm" color="red"/>
               <MdiIcon
                 :icon="copyIcon"
                 class="text-gray-500 hover:cursor-pointer"
@@ -52,8 +51,9 @@
           <ULink
             href="https://docs.vueless.com"
             target-blank
+            :config="getStartedLinkConfig"
           >
-            <UButton size="sm" label="Get Started">
+            <UButton size="sm" label="Get Started" block>
               <template #right>
                 <MdiIcon icon="mdiArrowRight" color="white" />
               </template>
@@ -92,6 +92,10 @@ const options: TypedOptions = {
   backSpeed: 50,
   backDelay: 2000,
 };
+
+const getStartedLinkConfig = {
+  linkWithChild: "max-sm:w-full",
+}
 
 const installCommand = "npm install vueless @vueless/plugin-vite";
 
