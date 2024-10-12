@@ -12,7 +12,8 @@
           <li>
             <ULink
               label="hello@vueless.com"
-              href="/"
+              href="hello@vueless.com"
+              type="email"
             />
           </li>
         </ul>
