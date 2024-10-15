@@ -12,15 +12,7 @@
       />
     </div>
 
-    <UButton
-      color="gray"
-      variant="thirdary"
-      no-ring
-      class="lg:hidden p-0"
-      @click="toggleMenu"
-    >
-      <UIcon v-if="!isMenuOpen" :src="MenuIcon" color="gray" />
-    </UButton>
+    <UIcon v-if="!isMenuOpen" name="more_vert" size="lg" class="lg:hidden" @click="toggleMenu" />
 
     <div
       v-if="isMenuOpen"
@@ -52,7 +44,7 @@
             name="close"
             color="gray"
             size="sm"
-            :class="{ 'hidden': !isMenuOpen }"
+            :class="!isMenuOpen && 'hidden'"
             @click="isMenuOpen = false"
           />
         </li>
@@ -78,7 +70,6 @@
 
 <script setup lang="ts">
 import VuelessLogo from "~/assets/svg/vueless-logo.svg";
-import MenuIcon from "~/assets/svg/menu-icon.svg?component";
 
 const navigationLinks = [
   { name: "Docs", href: "https://docs.vueless.com" },

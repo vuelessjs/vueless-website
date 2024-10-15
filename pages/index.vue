@@ -40,9 +40,11 @@
             class="max-w-[23rem]"
           >
             <template #right-icon>
-              <MdiIcon
-                :icon="copyIcon"
-                class="text-gray-500 hover:cursor-pointer"
+              <UIcon
+                :name="copyIcon"
+                size="xs"
+                color="gray"
+                interactive
                 @click="onClickCopy"
               />
             </template>
@@ -55,7 +57,7 @@
           >
             <UButton size="sm" label="Get Started" block>
               <template #right>
-                <MdiIcon icon="mdiArrowRight" color="white" />
+                <UIcon name="arrow_forward" size="xs" color="white" />
               </template>
             </UButton>
 
@@ -110,7 +112,7 @@ const headerConfig = {
 const isCopyTimeout = ref(false);
 
 const copyIcon = computed(() =>
-  isCopyTimeout.value ? "mdiCheck" : "mdiContentCopy",
+  isCopyTimeout.value ? "check" : "content_copy",
 );
 
 function onClickCopy() {
