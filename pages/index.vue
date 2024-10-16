@@ -5,7 +5,7 @@
         radial-gradient-container flex justify-center w-full rounded-full lg:min-w-[50rem]
         lg:absolute lg:z-10 lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4
       ">
-      <div class="flex flex-col items-center max-w-[50rem]">
+      <UCol align="center" gap="2xs" class="max-w-[50rem]">
         <span
           class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
           :class="!vuelessPackage?.version && 'animate-pulse'"
@@ -13,13 +13,12 @@
           Vueless UI {{ vuelessPackage?.version || "0.0.XX" }} is out! 🚀
         </span>
 
-        <h1
-          class="mt-6 text-center font-bold text-slate-900 text-4xl md:text-5xl lg:text-7xl"
-        >
+        <UHeader size="xl" :config="headerConfig">
           A
-          <span class="lg:-mx-3 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25 -mx-2 px-2 py-1 lg:px-3 lg:py-1"
-            >UI Library</span
-          >
+            <span class="inline-flex max-h-14 lg:max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
+            >
+              UI Library
+            </span>
           for
           <br />
 
@@ -29,36 +28,42 @@
             </Typed>
           </ClientOnly>
 
-        </h1>
-        <p class="mt-4 text-center text-sm whitespace-break-spaces sm:text-base lg:text-lg text-gray-600">
+        </UHeader>
+        <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600 font-medium lg:w-[36rem]">
           Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
-        </p>
+        </UText>
 
-        <div class="mt-4 lg:mt-11 flex flex-col items-center w-full sm:w-auto justify-center gap-4 sm:flex-row">
-          <div
-            class="flex items-center gap-1 rounded-lg w-full sm:w-auto border border-gray-300 bg-white p-2.5"
+        <URow align="stretch" justify="center" class="mt-4 lg:mt-11 sm:flex-row">
+          <UInput
+            :model-value="installCommand"
+            readonly
+            class="max-w-[23rem]"
           >
-            <input
-              class="text-sm sm:w-80 w-full focus-within:outline-none focus:outline-none focus-visible:outline-none"
-              readonly
-              :value="installCommand"
-            />
-            <MdiIcon
-              :icon="copyIcon"
-              class="text-gray-500 hover:cursor-pointer"
-              @click="onClickCopy"
-            />
-          </div>
+            <template #right-icon>
+              <UIcon
+                :name="copyIcon"
+                size="xs"
+                color="gray"
+                interactive
+                @click="onClickCopy"
+              />
+            </template>
+          </UInput>
 
-          <NuxtLink
-            class="border border-slate-900 flex items-center justify-center gap-1 rounded-lg bg-slate-900 px-[1.125rem] py-2.5 text-sm text-white max-sm:w-full"
-            to="https://docs.vueless.com"
+          <ULink
+            href="https://docs.vueless.com"
+            target-blank
+            :config="getStartedLinkConfig"
           >
-            Get Started
-            <MdiIcon icon="mdiArrowRight" />
-          </NuxtLink>
-        </div>
-      </div>
+            <UButton size="sm" label="Get Started" block>
+              <template #right>
+                <UIcon name="arrow_forward" size="xs" color="white" />
+              </template>
+            </UButton>
+
+          </ULink>
+        </URow>
+      </UCol>
     </div>
   </div>
 </template>
@@ -90,16 +95,24 @@ const options: TypedOptions = {
   backDelay: 2000,
 };
 
+const getStartedLinkConfig = {
+  linkWithChild: "max-sm:w-full",
+}
+
 const installCommand = "npm install vueless @vueless/plugin-vite";
 
 const { data: vuelessPackage } = await useFetch<VuelessPackage>(
   "https://registry.npmjs.org/vueless/latest", { server: false }
 );
 
+const headerConfig = {
+  header: "mt-6 text-center font-bold text-slate-900 md:text-5xl lg:text-7xl",
+}
+
 const isCopyTimeout = ref(false);
 
 const copyIcon = computed(() =>
-  isCopyTimeout.value ? "mdiCheck" : "mdiContentCopy",
+  isCopyTimeout.value ? "check" : "content_copy",
 );
 
 function onClickCopy() {

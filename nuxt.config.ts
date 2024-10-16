@@ -9,9 +9,9 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    ["@nuxtjs/google-fonts", { families: { Montserrat: [500, 600, 700] } }],
+    ["@nuxtjs/google-fonts", { families: { Montserrat: [400, 500, 600, 700] } }],
     "@nuxt/eslint",
-    "nuxt-mdi",
+    "@vueless/module-nuxt",
   ],
   compatibilityDate: "2024-07-03",
 });
