@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex lg:items-center justify-between pt-6 lg:pt-9 pb-4 pr-0.5 max-h-24"
+    class="flex items-center justify-between pt-6 lg:pt-9 pb-4 pr-0.5 max-h-24"
   >
     <div class="flex">
       <img :src="VuelessLogo" width="163" height="64" alt="Vueless UI" />
@@ -12,7 +12,7 @@
       />
     </div>
 
-    <UIcon v-if="!isMenuOpen" name="more_vert" size="lg" class="lg:hidden" @click="toggleMenu" />
+    <UIcon v-if="!isMenuOpen" name="menu"  class="lg:hidden" @click="toggleMenu" />
 
     <div
       v-if="isMenuOpen"

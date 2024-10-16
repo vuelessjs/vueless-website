@@ -29,7 +29,7 @@
           </ClientOnly>
 
         </UHeader>
-        <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600 font-medium">
+        <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600 font-medium lg:w-[36rem]">
           Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
         </UText>
 
