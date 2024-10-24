@@ -41,7 +41,7 @@
           >
             <template #right-icon>
               <UIcon
-                :name="copyIcon"
+                :name="isCopyTimeout ? 'check' : 'content_copy'"
                 size="xs"
                 color="gray"
                 interactive
@@ -60,7 +60,6 @@
                 <UIcon name="arrow_forward" size="xs" color="white" />
               </template>
             </UButton>
-
           </ULink>
         </URow>
       </UCol>
@@ -111,9 +110,6 @@ const headerConfig = {
 
 const isCopyTimeout = ref(false);
 
-const copyIcon = computed(() =>
-  isCopyTimeout.value ? "check" : "content_copy",
-);
 
 function onClickCopy() {
   if (isCopyTimeout.value) return;
