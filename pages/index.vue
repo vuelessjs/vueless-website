@@ -34,10 +34,18 @@
         </UText>
 
         <URow align="stretch" justify="center" class="mt-4 lg:mt-11 sm:flex-row">
+          <!--
+          TODO: Add vue/nuxt switcher
+          <UToggle model-value="vue" size="sm" variant="secondary">
+            <UToggleItem value="vue">Vue</UToggleItem>
+            <UToggleItem value="nuxt">Nuxt</UToggleItem>
+          </UToggle>
+          -->
+
           <UInput
             :model-value="installCommand"
             readonly
-            class="max-w-[23rem]"
+            class="max-w-[16rem]"
           >
             <template #right-icon>
               <UIcon
@@ -99,7 +107,7 @@ const getStartedLinkConfig = {
   linkWithChild: "max-sm:w-full",
 }
 
-const installCommand = "npm install vueless @vueless/plugin-vite";
+const installCommand = "npm install vueless";
 
 const { data: vuelessPackage } = await useFetch<VuelessPackage>(
   "https://registry.npmjs.org/vueless/latest", { server: false }
