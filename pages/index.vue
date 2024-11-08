@@ -49,7 +49,7 @@
           >
             <template #right-icon>
               <UIcon
-                :name="copyIcon"
+                :name="isCopyTimeout ? 'check' : 'content_copy'"
                 size="xs"
                 color="gray"
                 interactive
@@ -118,10 +118,6 @@ const headerConfig = {
 }
 
 const isCopyTimeout = ref(false);
-
-const copyIcon = computed(() =>
-  isCopyTimeout.value ? "check" : "content_copy",
-);
 
 function onClickCopy() {
   if (isCopyTimeout.value) return;
