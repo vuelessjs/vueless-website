@@ -3,12 +3,6 @@
     <img :src="GradientTop" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
     <img :src="GradientBottom" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 bottom-0 left-0" width="1400" height="1813" />
 
-    <div v-if="false" class="w-full absolute lg:top-9 top-0 z-10">
-      <div class="lg:w-fit w-full mx-auto px-4 py-1 lg:py-2 bg-red-500 text-white text-xs text-center lg:rounded-full">
-        We do not recommend to use Vueless UI in production, yet.
-      </div>
-    </div>
-
     <div class="relative overflow-hidden">
       <ClientOnly>
         <div class="absolute z-10 w-screen max-h-fit hidden lg:block top-[45%] -rotate-12 whitespace-nowrap">
