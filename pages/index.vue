@@ -45,7 +45,7 @@
           <UInput
             :model-value="installCommand"
             readonly
-            class="max-w-[16rem]"
+            class="w-full sm:max-w-[16rem]"
           >
             <template #right-icon>
               <UIcon
