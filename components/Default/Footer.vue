@@ -5,8 +5,8 @@
         <ul class="flex max-sm:flex-col-reverse items-center gap-3 lg:gap-10 lg:flex-row">
           <li>
             <ULink
-              label="MIT License"
-              href="https://github.com/vuelessjs/vueless/blob/main/LICENSE"
+              label="This site is powered by Netlify"
+              href="https://www.netlify.com"
             />
           </li>
           <li>
