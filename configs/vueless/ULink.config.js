@@ -1,6 +1,3 @@
 export default /*tw*/ {
-  wrapper: "font-semibold",
-  defaults: {
-    noRing: true,
-  }
+  link: "font-bold",
 };

@@ -29,6 +29,7 @@
           </ClientOnly>
 
         </UHeader>
+
         <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600 font-medium lg:w-[36rem]">
           Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
         </UText>
@@ -46,29 +47,25 @@
             :model-value="installCommand"
             readonly
             class="w-full sm:max-w-[16rem]"
+            :config="{input: 'h-[37px]'}"
+            @click="onClickCopy"
           >
-            <template #right-icon>
+            <template #right>
               <UIcon
+                v-tooltip="`Copy to clipboard`"
                 :name="isCopyTimeout ? 'check' : 'content_copy'"
                 size="xs"
                 color="gray"
                 interactive
-                @click="onClickCopy"
               />
-            </template>
-          </UInput>
+          </template></UInput>
 
           <ULink
             href="https://docs.vueless.com"
-            target-blank
+            target="_blank"
             :config="getStartedLinkConfig"
           >
-            <UButton size="sm" label="Get Started" block>
-              <template #right>
-                <UIcon name="arrow_forward" size="xs" color="white" />
-              </template>
-            </UButton>
-
+            <UButton color="grayscale" right-icon="arrow_forward" size="sm" label="Get Started" block />
           </ULink>
         </URow>
       </UCol>
