@@ -58,7 +58,8 @@
                 interactive
                 @click="onClickCopy"
               />
-          </template></UInput>
+            </template>
+          </UInput>
 
           <ULink
             href="https://docs.vueless.com"
