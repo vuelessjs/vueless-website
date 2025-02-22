@@ -1,3 +1,3 @@
 export default /*tw*/ {
-  link: "font-bold",
+  link: "font-medium",
 };

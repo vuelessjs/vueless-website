@@ -48,7 +48,6 @@
             readonly
             class="w-full sm:max-w-[16rem]"
             :config="{input: 'h-[37px]'}"
-            @click="onClickCopy"
           >
             <template #right>
               <UIcon
@@ -57,6 +56,7 @@
                 size="xs"
                 color="gray"
                 interactive
+                @click="onClickCopy"
               />
           </template></UInput>
 

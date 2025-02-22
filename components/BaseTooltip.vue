@@ -13,15 +13,12 @@
 </template>
 
 <script setup lang="ts">
-import vClickOutside from "../directives/vClickOutside.js";
-
 const props = withDefaults(defineProps<{
   text: string;
 }>(), {
   text: "Tooltip",
 });
 
-//
 const isShown = ref(false);
 
 function onMouseEnter(){

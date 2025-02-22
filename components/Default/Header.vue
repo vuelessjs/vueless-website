@@ -37,6 +37,7 @@
             :label="link.name"
             class="text-base"
             :href="link.href"
+            target="_blank"
             @click="isMenuOpen = false"
           />
           <UIcon
@@ -53,6 +54,7 @@
           <ULink
             label="npm"
             href="https://www.npmjs.com/package/vueless"
+            target="_blank"
             @click="isMenuOpen = false"
           />
         </li>
@@ -60,6 +62,7 @@
           <ULink
             label="GitHub"
             href="https://github.com/vuelessjs/vueless"
+            target="_blank"
             @click="isMenuOpen = false"
           />
         </li>

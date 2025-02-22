@@ -7,6 +7,7 @@
             <ULink
               label="This site is powered by Netlify"
               href="https://www.netlify.com"
+              target="_blank"
             />
           </li>
           <li>
@@ -22,12 +23,14 @@
             <ULink
               label="npm"
               href="https://www.npmjs.com/package/vueless"
+              target="_blank"
             />
           </li>
           <li>
             <ULink
               label="GitHub"
               href="https://github.com/vuelessjs/vueless"
+              target="_blank"
             />
           </li>
         </ul>
