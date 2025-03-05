@@ -20,8 +20,10 @@
           src="../assets/images/config.png"
           alt="config"
           class="
-            hidden md:block h-64
-            md:absolute md:-right-12 md:-top-4 md:rotate-[7deg]
+            hidden md:block h-80
+            md:absolute md:-top-4 md:-right-24 md:rotate-[7deg]
+            lg:h-96
+            xl:h-[30rem] lg:-top-4 lg:-right-60
           "
         />
       </UCard>
@@ -88,8 +90,8 @@
           />
           preset for effortless component styling in isolation.
         </UText>
-        <img src="../assets/images/storybook-icon.png" alt="storybook" class="w-10 md:w-auto md:block md:absolute z-10 top-[28%] right-[23%] drop-shadow-[0_4px_10px_rgba(255,255,255,0.8)]" />
-        <img src="../assets/images/storybook-bg.png" alt="storybook" class="hidden md:block absolute h-52 -right-5 -top-1" />
+        <img src="../assets/images/storybook-icon.png" alt="storybook" class="w-10 md:w-auto md:block md:absolute z-10 top-auto right-[10%] lg:right-1/4 drop-shadow-[0_4px_10px_rgba(255,255,255,0.8)]" />
+        <img src="../assets/images/storybook-bg.png" alt="storybook" class="hidden md:block absolute h-40 lg:h-52 xl:h-56 -right-10 top-auto" />
       </UCard>
     </URow>
 
@@ -108,12 +110,12 @@
           support with types and tooling assistance.
         </UText>
         <img src="../assets/images/ts-logo-mobile.png" alt="typescript" class="w-10 md:hidden" />
-        <img src="../assets/images/ts-logo.png" alt="typescript" class="hidden md:block absolute -top-1 right-5" />
+        <img src="../assets/images/ts-logo.png" alt="typescript" class="hidden md:block absolute -top-12 lg:-top-1 right-5" />
       </UCard>
       <UCard class="col-span-2 md:p-8 hover:border-gray-300">
         <URow justify="between" align="center" gap="xl" no-mobile class="flex-row-reverse md:flex-col">
           <ul class="flex flex-wrap max-md:justify-end gap-2 md:gap-6">
-            <li v-for="(icon, index) in icons" :key="index" :class="{ 'max-md:hidden': index > 3 }">
+            <li v-for="(icon, index) in filteredIcons" :key="index">
               <UIcon :name="icon" color="green" />
             </li>
           </ul>
@@ -173,7 +175,7 @@ const mainCardConfig = {
   content: "flex items-center justify-between h-full",
 };
 
-const icons = ref([
+const icons = [
   "heart_plus",
   "create_new_folder",
   "bolt",
@@ -190,5 +192,12 @@ const icons = ref([
   "signature",
   "bookmark",
   "archive",
-]);
+];
+
+const filteredIcons = computed(() => {
+  if (width.value < 640) return icons.slice(0, 4);
+  if (width.value < 1280) return icons.slice(0, 8);
+
+  return icons;
+});
 </script>
