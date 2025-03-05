@@ -90,8 +90,23 @@
           />
           preset for effortless component styling in isolation.
         </UText>
-        <img src="../assets/images/storybook-icon.png" alt="storybook" class="w-10 md:w-auto md:block md:absolute z-10 top-auto right-[10%] lg:right-1/4 drop-shadow-[0_4px_10px_rgba(255,255,255,0.8)]" />
-        <img src="../assets/images/storybook-bg.png" alt="storybook" class="hidden md:block absolute h-40 lg:h-52 xl:h-56 -right-10 top-auto" />
+        <img
+          src="../assets/images/storybook-icon.png"
+          alt="storybook"
+          class="
+            w-10 z-10 top-auto right-[20%]
+            drop-shadow-[0_4px_10px_rgba(255,255,255,0.8)]
+            md:w-auto md:block md:absolute xl:right-1/4
+          "
+        />
+        <img
+          src="../assets/images/storybook-bg.png"
+          alt="storybook"
+          class="
+            hidden absolute h-40 top-auto right-0
+            md:block lg:h-52 xl:h-56 lg:-right-24 xl:-right-10
+          "
+        />
       </UCard>
     </URow>
 
@@ -110,7 +125,7 @@
           support with types and tooling assistance.
         </UText>
         <img src="../assets/images/ts-logo-mobile.png" alt="typescript" class="w-10 md:hidden" />
-        <img src="../assets/images/ts-logo.png" alt="typescript" class="hidden md:block absolute -top-12 lg:-top-1 right-5" />
+        <img src="../assets/images/ts-logo.png" alt="typescript" class="hidden md:block absolute right-5 -top-12 lg:-top-1" />
       </UCard>
       <UCard class="col-span-2 md:p-8 hover:border-gray-300">
         <URow justify="between" align="center" gap="xl" no-mobile class="flex-row-reverse md:flex-col">
