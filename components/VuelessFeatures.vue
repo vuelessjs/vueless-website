@@ -5,7 +5,14 @@
       <UCard :config="mainCardConfig" class="overflow-hidden relative col-span-4 md:p-8">
         <UText :config="textConfig">
           Limitless
-          <ULink label="customization" color="grayscale" href="https://docs.vueless.com/component-customization/general" underlined class="lg:text-2xl" />
+          <ULink
+            label="customization"
+            size="lg"
+            color="grayscale"
+            href="https://docs.vueless.com/component-customization/general"
+            underlined
+            class="lg:text-2xl"
+          />
           via global or local component configs.
         </UText>
         <img src="../assets/images/brackets.png" alt="brackets" class="w-10" />
@@ -39,7 +46,14 @@
           </div>
           <UText :config="textConfig">
             Light and
-            <ULink label="dark" color="grayscale" href="https://docs.vueless.com/global-customization/dark-mode" underlined class="lg:text-2xl" />
+            <ULink
+              label="dark"
+              size="lg"
+              color="grayscale"
+              href="https://docs.vueless.com/global-customization/dark-mode"
+              underlined
+              class="lg:text-2xl"
+            />
             modes out of the box.
           </UText>
         </URow>
@@ -51,13 +65,27 @@
         <img src="../assets/images/palletes.png" alt="palletes" />
         <UText :config="textConfig">
           Brand and gray
-          <ULink label="color" color="grayscale" href="https://docs.vueless.com/global-customization/colors" underlined class="lg:text-2xl" />
+          <ULink
+            label="color"
+            size="lg"
+            color="grayscale"
+            href="https://docs.vueless.com/global-customization/colors"
+            underlined
+            class="lg:text-2xl"
+          />
           palettes with dynamic change.
         </UText>
       </UCard>
       <UCard :config="mainCardConfig" class="col-span-4 md:p-8 overflow-hidden relative">
         <UText :config="textConfig">
-          <ULink label="Storybook" color="grayscale" href="https://docs.vueless.com/installation/storybook" underlined class="lg:text-2xl" />
+          <ULink
+            label="Storybook"
+            size="lg"
+            color="grayscale"
+            href="https://docs.vueless.com/installation/storybook"
+            underlined
+            class="lg:text-2xl"
+          />
           preset for effortless component styling in isolation.
         </UText>
         <img src="../assets/images/storybook-icon.png" alt="storybook" class="w-10 md:w-auto md:block md:absolute z-10 top-[28%] right-[23%] drop-shadow-[0_4px_10px_rgba(255,255,255,0.8)]" />
@@ -69,7 +97,14 @@
       <UCard :config="mainCardConfig" class="overflow-hidden relative col-span-4 md:p-8">
         <UText :config="textConfig">
           Top-notch
-          <ULink label="TypeScript" color="grayscale" href="https://www.typescriptlang.org/docs/" underlined class="lg:text-2xl" />
+          <ULink
+            label="TypeScript"
+            size="lg"
+            color="grayscale"
+            href="https://www.typescriptlang.org/docs/"
+            underlined
+            class="lg:text-2xl"
+          />
           support with types and tooling assistance.
         </UText>
         <img src="../assets/images/ts-logo-mobile.png" alt="typescript" class="w-10 md:hidden" />
@@ -84,7 +119,14 @@
           </ul>
           <UText :config="textConfig">
             1000+ SVG
-            <ULink label="icons" color="grayscale" href="https://docs.vueless.com/svg-icons/general-usage" underlined class="lg:text-2xl" />
+            <ULink
+              label="icons"
+              size="lg"
+              color="grayscale"
+              href="https://docs.vueless.com/svg-icons/general-usage"
+              underlined
+              class="lg:text-2xl"
+            />
             from top icon libraries.
           </UText>
         </URow>
