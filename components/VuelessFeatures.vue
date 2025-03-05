@@ -157,13 +157,6 @@ import { useWindowSize } from "@vueuse/core";
 
 const { width } = useWindowSize();
 
-const buttonSize = computed(() => {
-  if (width.value < 640) return "xs";
-  if (width.value < 1024) return "md";
-
-  return "lg";
-});
-
 const buttonConfig = {
   centerIcon: {
     defaults: {
@@ -208,6 +201,13 @@ const icons = [
   "bookmark",
   "archive",
 ];
+
+const buttonSize = computed(() => {
+  if (width.value < 640) return "xs";
+  if (width.value < 1024) return "md";
+
+  return "lg";
+});
 
 const filteredIcons = computed(() => {
   if (width.value < 640) return icons.slice(0, 4);
