@@ -61,7 +61,7 @@
     </URow>
 
     <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap lg:grid lg:grid-cols-6">
-      <UCard :config="{ content: 'flex flex-row-reverse lg:flex-col gap-6' }" class="col-span-2 md:p-8 hover:border-gray-300">
+      <UCard :config="{ content: 'flex flex-row-reverse justify-between lg:flex-col gap-6' }" class="col-span-2 md:p-8 hover:border-gray-300">
         <img src="../assets/images/palletes.png" alt="palletes" class="max-md:max-w-40" />
         <UText :config="textConfig">
           Brand and gray
