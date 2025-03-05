@@ -26,7 +26,7 @@
         />
       </UCard>
       <UCard class="col-span-2 md:p-8 hover:border-gray-300">
-        <URow gap="xl" no-mobile class="flex-row-reverse max-md:justify-between max-md:items-center md:flex-col">
+        <URow gap="xl" no-mobile class="max-lg:!flex-row-reverse max-lg:justify-between max-lg:items-center lg:flex-col">
           <div class="flex">
             <UButton
               :size="buttonSize"
@@ -61,8 +61,8 @@
     </URow>
 
     <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap lg:grid lg:grid-cols-6">
-      <UCard :config="{ content: 'flex flex-col-reverse md:flex-col gap-6' }" class="col-span-2 md:p-8 hover:border-gray-300">
-        <img src="../assets/images/palletes.png" alt="palletes" />
+      <UCard :config="{ content: 'flex flex-row-reverse lg:flex-col gap-6' }" class="col-span-2 md:p-8 hover:border-gray-300">
+        <img src="../assets/images/palletes.png" alt="palletes" class="max-md:max-w-40" />
         <UText :config="textConfig">
           Brand and gray
           <ULink
@@ -112,7 +112,7 @@
       </UCard>
       <UCard class="col-span-2 md:p-8 hover:border-gray-300">
         <URow justify="between" align="center" gap="xl" no-mobile class="flex-row-reverse md:flex-col">
-          <ul class="flex flex-wrap gap-2 md:gap-6">
+          <ul class="flex flex-wrap max-md:justify-end gap-2 md:gap-6">
             <li v-for="(icon, index) in icons" :key="index" :class="{ 'max-md:hidden': index > 3 }">
               <UIcon :name="icon" color="green" />
             </li>
