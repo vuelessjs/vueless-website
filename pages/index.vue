@@ -1,9 +1,8 @@
 <template>
-  <div class="content-center justify-self-center relative">
     <div
       class="
-        radial-gradient-container flex justify-center w-full rounded-full lg:min-w-[50rem]
-        lg:absolute lg:z-10 lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4
+        radial-gradient-container bg-white relative
+        flex justify-center z-10 lg:min-w-[50rem] mx-auto rounded-full
       ">
       <UCol align="center" gap="2xs" class="max-w-[50rem]">
         <span
@@ -71,7 +70,6 @@
         </URow>
       </UCol>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">

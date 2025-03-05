@@ -12,7 +12,7 @@
       />
     </div>
 
-    <UIcon v-if="!isMenuOpen" name="menu"  class="lg:hidden" @click="toggleMenu" />
+    <UIcon v-if="!isMenuOpen" name="menu" class="lg:hidden" @click="toggleMenu" />
 
     <div
       v-if="isMenuOpen"
