@@ -1,34 +1,38 @@
 <template>
-  <UCol align="center" class="gap-12 mt-20 md:mt-40">
+  <UCol align="center" class="gap-4 lg:gap-12 mt-20 md:mt-40">
     <UHeader class="font-bold text-4xl lg:text-5xl">Features</UHeader>
-    <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap lg:grid lg:grid-cols-6">
-      <UCard :config="mainCardConfig" class="overflow-hidden relative col-span-4 md:p-8">
-        <UText :config="textConfig">
+    <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap gap-4 lg:gap-8 lg:grid lg:grid-cols-6">
+      <UCard
+        :config="{
+          wrapper: 'hover:border-gray-300 px-0 pt-0',
+          content: 'flex flex-col-reverse md:flex-row md:items-center md:justify-start h-full',
+        }"
+        class="overflow-hidden relative col-span-4 md:p-8"
+      >
+        <UText :config="textConfig" class="px-4 md:px-0">
           Limitless
           <ULink
             label="customization"
-            size="lg"
             color="grayscale"
             href="https://docs.vueless.com/component-customization/general"
+            target="_blank"
             underlined
-            class="lg:text-2xl"
+            class="sm:text-xl lg:text-2xl"
           />
           via global or local component configs.
         </UText>
-        <img src="../assets/images/brackets.png" alt="brackets" class="w-10" />
+        <img src="../assets/images/config-full.png" alt="config" class="md:hidden w-full block object-cover object-top h-1/2 mb-5" />
         <img
           src="../assets/images/config.png"
           alt="config"
           class="
-            hidden md:block h-80
-            md:absolute md:-top-4 md:-right-24 md:rotate-[7deg]
-            lg:h-96
-            xl:h-[30rem] lg:-top-4 lg:-right-60
+            h-80 hidden md:block md:absolute md:-top-4 md:-right-12 md:rotate-[7deg]
+            lg:h-96 lg:-top-4 lg:-right-28 xl:-right-20
           "
         />
       </UCard>
       <UCard class="col-span-2 md:p-8 hover:border-gray-300">
-        <URow gap="xl" no-mobile class="max-lg:!flex-row-reverse max-lg:justify-between max-lg:items-center lg:flex-col">
+        <UCol gap="xl" no-mobile class="gap-4 lg:gap-8">
           <div class="flex">
             <UButton
               :size="buttonSize"
@@ -36,7 +40,7 @@
               icon="light_mode"
               variant="secondary"
               :config="buttonConfig"
-              class="rounded-l-full rounded-r-none"
+              class="rounded-l-full rounded-r-none border-gray-300 hover:border-gray-400"
             />
             <UButton
               :size="buttonSize"
@@ -50,30 +54,31 @@
             Light and
             <ULink
               label="dark"
-              size="lg"
+
               color="grayscale"
               href="https://docs.vueless.com/global-customization/dark-mode"
+              target="_blank"
               underlined
-              class="lg:text-2xl"
+              class="sm:text-xl lg:text-2xl"
             />
             modes out of the box.
           </UText>
-        </URow>
+        </UCol>
       </UCard>
     </URow>
 
-    <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap lg:grid lg:grid-cols-6">
-      <UCard :config="{ content: 'flex flex-row-reverse justify-between lg:flex-col gap-6' }" class="col-span-2 md:p-8 hover:border-gray-300">
-        <img src="../assets/images/palletes.png" alt="palletes" class="max-md:max-w-40" />
+    <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap gap-4 lg:gap-8 lg:grid lg:grid-cols-6">
+      <UCard :config="{ content: 'flex flex-col items-start gap-6' }" class="col-span-2 md:p-8 hover:border-gray-300">
+        <img src="../assets/svg/paletes.svg" alt="palletes" class="max-h-12" />
         <UText :config="textConfig">
           Brand and gray
           <ULink
             label="color"
-            size="lg"
             color="grayscale"
             href="https://docs.vueless.com/global-customization/colors"
+            target="_blank"
             underlined
-            class="lg:text-2xl"
+            class="sm:text-xl lg:text-2xl"
           />
           palettes with dynamic change.
         </UText>
@@ -82,71 +87,73 @@
         <UText :config="textConfig">
           <ULink
             label="Storybook"
-            size="lg"
             color="grayscale"
             href="https://docs.vueless.com/installation/storybook"
+            target="_blank"
             underlined
-            class="lg:text-2xl"
+            class="sm:text-xl lg:text-2xl"
           />
           preset for effortless component styling in isolation.
         </UText>
         <img
           src="../assets/images/storybook-icon.png"
           alt="storybook"
-          class="
-            w-10 z-10 top-auto right-[20%]
-            drop-shadow-[0_4px_10px_rgba(255,255,255,0.8)]
-            md:w-auto md:block md:absolute xl:right-1/4
-          "
+          class="w-12 -mt-5 md:-mt-0 md:hidden -rotate-6 drop-shadow-[0_4px_10px_rgba(255,255,255,0.8)]"
         />
         <img
           src="../assets/images/storybook-bg.png"
           alt="storybook"
           class="
-            hidden absolute h-40 top-auto right-0
-            md:block lg:h-52 xl:h-56 lg:-right-24 xl:-right-10
+            hidden lg:absolute h-40 top-auto right-0 -mt-16 -ml-6 lg:-ml-0
+            md:block lg:h-56 lg:-mt-0 xl:h-56 lg:-right-24 xl:-right-10
           "
         />
       </UCard>
     </URow>
 
-    <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap lg:grid lg:grid-cols-6">
+    <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap gap-4 lg:gap-8 lg:grid lg:grid-cols-6">
       <UCard :config="mainCardConfig" class="overflow-hidden relative col-span-4 md:p-8">
         <UText :config="textConfig">
           Top-notch
           <ULink
             label="TypeScript"
-            size="lg"
             color="grayscale"
             href="https://www.typescriptlang.org/docs/"
+            target="_blank"
             underlined
-            class="lg:text-2xl"
+            class="sm:text-xl lg:text-2xl"
           />
           support with types and tooling assistance.
         </UText>
-        <img src="../assets/images/ts-logo-mobile.png" alt="typescript" class="w-10 md:hidden" />
-        <img src="../assets/images/ts-logo.png" alt="typescript" class="hidden md:block absolute right-5 -top-12 lg:-top-1" />
+        <img
+          src="../assets/svg/ts-logo.svg"
+          alt="typescript"
+          class="
+            right-5 h-16 md:h-24 lg:h-auto -top-4 lg:-top-1
+            -mt-5 md:-mt-10 lg:-mt-0 lg:absolute
+          "
+        />
       </UCard>
       <UCard class="col-span-2 md:p-8 hover:border-gray-300">
-        <URow justify="between" align="center" gap="xl" no-mobile class="flex-row-reverse md:flex-col">
-          <ul class="flex flex-wrap max-md:justify-end gap-2 md:gap-6">
-            <li v-for="(icon, index) in filteredIcons" :key="index">
+        <UCol justify="between" gap="xl">
+          <div class="flex flex-wrap max-md:justify-end gap-2 md:gap-6">
+            <span v-for="(icon, index) in filteredIcons" :key="index">
               <UIcon :name="icon" color="green" />
-            </li>
-          </ul>
+            </span>
+          </div>
           <UText :config="textConfig">
             1000+ SVG
             <ULink
               label="icons"
-              size="lg"
               color="grayscale"
               href="https://docs.vueless.com/svg-icons/general-usage"
+              target="_blank"
               underlined
-              class="lg:text-2xl"
+              class="sm:text-xl lg:text-2xl"
             />
             from top icon libraries.
           </UText>
-        </URow>
+        </UCol>
       </UCard>
     </URow>
   </UCol>
@@ -168,19 +175,12 @@ const buttonConfig = {
 }
 
 const textConfig = {
-  wrapper: {
-    base: "font-semibold lg:text-2xl md:basis-1/2",
-    variants: {
-      size: {
-        md: "text-base"
-      },
-    },
-  },
+  wrapper: "font-semibold sm:text-xl lg:text-2xl md:basis-1/2",
 };
 
 const mainCardConfig = {
   wrapper: "hover:border-gray-300",
-  content: "flex items-center justify-between h-full",
+  content: "flex flex-col-reverse items-start gap-4 lg:flex-row lg:items-center lg:justify-between h-full",
 };
 
 const icons = [
@@ -210,7 +210,6 @@ const buttonSize = computed(() => {
 });
 
 const filteredIcons = computed(() => {
-  if (width.value < 640) return icons.slice(0, 4);
   if (width.value < 1280) return icons.slice(0, 8);
 
   return icons;

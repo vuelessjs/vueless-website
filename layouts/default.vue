@@ -1,7 +1,7 @@
 <template>
   <div class="max-md:bg-gradient-to-b from-white to-gray-100 lg:bg-gray-100 min-h-screen">
-    <img :src="GradientTop" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 top-0 right-0" width="800" />
-    <img :src="GradientBottom" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 bottom-[-300px] left-0" width="800" />
+    <img src="../assets/svg/gradient-top.svg" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 top-0 right-0" width="800" />
+    <img src="../assets/svg/gradient-bottom.svg" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 bottom-[-300px] left-0" width="800" />
 
     <div class="relative overflow-hidden">
       <ClientOnly>
@@ -44,8 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import GradientTop from "~/assets/images/gradient-top.png";
-import GradientBottom from "~/assets/images/gradient-bottom.png";
+import VuelessFeatures from "~/pages/VuelessFeatures.vue";
 
 const lessTexts = [
   "Less worry, more peace ☮️",
