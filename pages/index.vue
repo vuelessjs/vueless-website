@@ -25,6 +25,9 @@
             <Typed :options="options">
               <span class="typing"/>
             </Typed>
+            <template #fallback>
+              <span>Flawless Devs</span>
+            </template>
           </ClientOnly>
 
         </UHeader>
@@ -91,7 +94,7 @@ useSeoMeta({
 })
 
 const options: TypedOptions = {
-  strings: ["Flawless Devs", "Boundless Ideas", "Effortless Coding"],
+  strings: ["Boundless Ideas", "Effortless Coding", "Flawless Devs"],
   loop: true,
   typeSpeed: 75,
   startDelay: 100,
