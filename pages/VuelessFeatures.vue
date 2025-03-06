@@ -27,7 +27,7 @@
           alt="config"
           class="
             h-80 hidden md:block md:absolute md:-top-4 md:-right-12 md:rotate-[7deg]
-            lg:h-96 lg:-top-4 lg:-right-28 xl:-right-20
+            lg:h-96 lg:-top-6 lg:-right-28 xl:-right-20
           "
         />
       </UCard>
