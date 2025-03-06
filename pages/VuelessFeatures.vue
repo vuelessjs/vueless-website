@@ -137,9 +137,12 @@
       <UCard class="col-span-2 md:p-8 hover:border-gray-300">
         <UCol justify="between" gap="xl">
           <div class="flex flex-wrap max-md:justify-end gap-2 md:gap-6">
-            <span v-for="(icon, index) in filteredIcons" :key="index">
-              <UIcon :name="icon" color="green" />
-            </span>
+            <UIcon
+              v-for="(icon, index) in filteredIcons"
+              :key="index"
+              :name="icon"
+              color="green"
+            />
           </div>
           <UText :config="textConfig">
             1000+ SVG
