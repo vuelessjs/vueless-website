@@ -28,7 +28,7 @@
 
       <div
         class="
-          mx-auto min-h-screen max-w-screen-2xl px-4 sm:px-8 flex flex-col justify-between gap-36
+          mx-auto min-h-screen max-w-screen-2xl px-4 sm:px-8 flex flex-col justify-between
         "
       >
         <DefaultHeader />
