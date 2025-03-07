@@ -34,19 +34,19 @@
         <UCol gap="xl" no-mobile class="gap-4 lg:gap-6">
           <div class="flex">
             <UButton
-              :size="buttonSize"
+              size="lg"
               color="grayscale"
               icon="light_mode"
               variant="secondary"
               :config="buttonConfig"
-              class="md:pr-4 rounded-l-full rounded-r-none border-gray-300 hover:border-gray-400"
+              class="pr-4 rounded-l-full rounded-r-none border-gray-300 hover:border-gray-400"
             />
             <UButton
-              :size="buttonSize"
+              size="lg"
               color="grayscale"
               icon="dark_mode"
               :config="buttonConfig"
-              class="md:pl-4 rounded-l-none rounded-r-full"
+              class="pl-4 rounded-l-none rounded-r-full"
             />
           </div>
           <UText :config="textConfig">
@@ -213,12 +213,6 @@ const icons = [
   { icon: "bookmark" },
   { icon: "archive" },
 ];
-
-const buttonSize = computed(() => {
-  if (width.value < 640) return "xs";
-
-  return "lg";
-});
 
 const filteredIcons = computed(() => {
   if (width.value < 640) return icons.slice(0, 8);
