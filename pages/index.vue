@@ -14,7 +14,7 @@
 
         <UHeader size="xl" :config="headerConfig">
           A
-            <span class="inline-flex sm:max-h-14 max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
+            <span class="inline-flex max-h-14 md:max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
             >
               UI Library
             </span>
