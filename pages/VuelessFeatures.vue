@@ -8,7 +8,7 @@
           content: 'flex flex-col-reverse md:flex-row md:items-center md:justify-start h-full',
         }"
       >
-        <UText :config="textConfig" class="pl-6 md:px-0">
+        <UText :config="textConfig" class="pl-4 sm:pl-6 md:px-0">
           Limitless
           <ULink
             label="customization"
