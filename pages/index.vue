@@ -1,9 +1,8 @@
 <template>
-  <div class="content-center justify-self-center relative">
     <div
       class="
-        radial-gradient-container flex justify-center w-full rounded-full lg:min-w-[50rem]
-        lg:absolute lg:z-10 lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4
+        radial-gradient-container bg-transparent lg:bg-white relative min-h-screen
+        flex justify-center z-10 lg:min-w-[50rem] mt-40 mx-auto rounded-full
       ">
       <UCol align="center" gap="2xs" class="max-w-[50rem]">
         <span
@@ -15,7 +14,7 @@
 
         <UHeader size="xl" :config="headerConfig">
           A
-            <span class="inline-flex max-h-14 lg:max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
+            <span class="inline-flex max-h-14 md:max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
             >
               UI Library
             </span>
@@ -26,11 +25,14 @@
             <Typed :options="options">
               <span class="typing"/>
             </Typed>
+            <template #fallback>
+              <span>Flawless Devs</span>
+            </template>
           </ClientOnly>
 
         </UHeader>
 
-        <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base lg:text-lg text-gray-600 font-medium lg:w-[36rem]">
+        <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base md:text-lg text-gray-600 font-medium lg:w-[36rem]">
           Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
         </UText>
 
@@ -71,7 +73,6 @@
         </URow>
       </UCol>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -93,7 +94,7 @@ useSeoMeta({
 })
 
 const options: TypedOptions = {
-  strings: ["Flawless Devs", "Boundless Ideas", "Effortless Coding"],
+  strings: ["Boundless Ideas", "Effortless Coding", "Flawless Devs"],
   loop: true,
   typeSpeed: 75,
   startDelay: 100,
@@ -112,7 +113,7 @@ const { data: vuelessPackage } = await useFetch<VuelessPackage>(
 );
 
 const headerConfig = {
-  header: "mt-6 text-center font-bold text-slate-900 md:text-5xl lg:text-7xl",
+  header: "mt-6 text-center font-bold text-slate-900 sm:text-5xl md:text-7xl",
 }
 
 const isCopyTimeout = ref(false);
