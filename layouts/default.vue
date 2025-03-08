@@ -1,11 +1,11 @@
 <template>
   <div class="max-md:bg-gradient-to-b from-white to-gray-100 lg:bg-gray-100 min-h-screen">
-    <img :src="GradientTop" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 top-0 right-0" width="1113" height="1513" />
-    <img :src="GradientBottom" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 bottom-0 left-0" width="1400" height="1813" />
+    <img src="../assets/svg/gradient-top.svg" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 top-0 right-0" width="800" />
+    <img src="../assets/svg/gradient-bottom.svg" alt="" class="hidden lg:block select-none pointer-events-none absolute z-50 bottom-[-300px] left-0" width="800" />
 
     <div class="relative overflow-hidden">
       <ClientOnly>
-        <div class="absolute z-10 w-screen max-h-fit hidden lg:block top-[45%] -rotate-12 whitespace-nowrap">
+        <div class="absolute z-10 w-screen max-h-fit hidden lg:block top-[20%] -rotate-12 whitespace-nowrap">
           <div class="inline-flex gap-6 animate-rightToLeft">
               <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
                 <span class="inline-block relative font-medium text-7xl opacity-5 select-none hover:opacity-30">
@@ -15,7 +15,7 @@
           </div>
         </div>
 
-        <div class="absolute z-10 w-screen max-h-fit bottom-20 sm:bottom-12 lg:top-[45%] lg:rotate-12 whitespace-nowrap">
+        <div class="absolute z-10 w-screen max-h-fit bottom-20 sm:bottom-12 lg:top-[20%] lg:rotate-12 whitespace-nowrap">
           <div class="inline-flex gap-6 animate-leftToRight">
               <BaseTooltip v-for="(text, index) in generatedLessTexts" :key="`${index}`" :text="text">
                 <span class="inline-block relative font-medium text-4xl lg:text-7xl opacity-5 select-none hover:opacity-30">
@@ -29,12 +29,13 @@
       <div
         class="
           mx-auto min-h-screen max-w-screen-2xl px-4 sm:px-8 flex flex-col justify-between
-          lg:grid lg:justify-normal lg:grid-rows-[fit-content(100%),1fr,fit-content(100%)]
         "
       >
         <DefaultHeader />
 
         <slot />
+
+        <VuelessComponents />
 
         <DefaultFooter />
       </div>
@@ -43,8 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import GradientTop from "~/assets/images/gradient-top.png";
-import GradientBottom from "~/assets/images/gradient-bottom.png";
+import VuelessComponents from "~/pages/VuelessComponents.vue";
 
 const lessTexts = [
   "Less worry, more peace ☮️",
