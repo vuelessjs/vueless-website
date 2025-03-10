@@ -39,7 +39,6 @@
             target-blank
             size="md"
             color="grayscale"
-            :href="value.profile"
             :label="value.nickname"
           />
         </div>
@@ -126,7 +125,6 @@ const rows = computed(() => {
           user: {
             nickname: "John Doe",
             image: "https://avatar.iran.liara.run/public/45",
-            profile: "https://gitlab.com/JohnnyGrid",
           },
           status: {
             label: "Payment Completed",
@@ -144,7 +142,6 @@ const rows = computed(() => {
           user: {
             nickname: "Adam Gordon",
             image: "https://avatar.iran.liara.run/public/41",
-            profile: "https://gitlab.com/JohnnyGrid",
           },
           status: {
             label: "Awaiting Confirmation",
@@ -162,7 +159,6 @@ const rows = computed(() => {
           user: {
             nickname: "Leslie Nielsen",
             image: "https://avatar.iran.liara.run/public/33",
-            profile: "https://gitlab.com/JohnnyGrid",
           },
           status: {
             label: "Payment Failed",
