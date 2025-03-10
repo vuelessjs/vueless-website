@@ -2,7 +2,6 @@
   <UCard
     title="Sign Up"
     description="Enter your email below to get started and create your account."
-    :config="{ content: 'flex flex-col gap-4' }"
   >
     <URow
       align="center"
@@ -12,6 +11,7 @@
         label="GitHub"
         variant="secondary"
         block
+        class="!leading-none"
       >
         <template #left>
           <UIcon
@@ -25,6 +25,7 @@
         label="Google"
         variant="secondary"
         block
+        class="!leading-none"
       >
         <template #left>
           <UIcon
@@ -37,7 +38,7 @@
 
     <UDivider label="OR CONTINUE WITH" />
 
-    <UGroup :config="{ content: 'flex flex-col gap-2' }">
+    <UCol gap="sm">
       <UInput
         label="Email"
         placeholder="johndoe@example.com"
@@ -48,7 +49,9 @@
         label="Password"
         type="password"
       />
-    </UGroup>
+    </UCol>
+
+    <UCheckbox label="Remember me" />
 
     <UButton
       label="Create account"

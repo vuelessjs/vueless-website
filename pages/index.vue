@@ -1,83 +1,99 @@
 <template>
   <div
     class="
-      radial-gradient-container bg-transparent lg:bg-white relative min-h-screen
-      flex justify-center z-10 lg:min-w-[50rem] mt-40 mx-auto rounded-full
-    ">
-    <UCol align="center" gap="2xs" class="max-w-[50rem]">
-      <span
-        class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
-        :class="!vuelessPackage?.version && 'animate-pulse'"
-      >
-        Vueless UI {{ vuelessPackage?.version || "0.0.XX" }} is out! 🚀
-      </span>
+      mx-auto min-h-screen max-w-screen-2xl px-4 sm:px-8 flex flex-col justify-between
+    "
+  >
+    <DefaultHeader />
 
-      <UHeader size="xl" :config="headerConfig">
-        A
-          <span class="inline-flex max-h-14 md:max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
+    <div
+      class="
+        radial-gradient-container bg-transparent lg:bg-white relative min-h-screen
+        flex justify-center z-10 lg:min-w-[50rem] mt-40 mx-auto rounded-full
+      "
+    >
+      <UCol align="center" gap="2xs" class="max-w-[50rem]">
+        <span
+          class="rounded-full border border-gray-300 px-3 py-1 text-sm font-semibold text-gray-600"
+          :class="!vuelessPackage?.version && 'animate-pulse'"
+        >
+          Vueless UI {{ vuelessPackage?.version || "0.0.XX" }} is out! 🚀
+        </span>
+
+        <UHeader size="xl" :config="headerConfig">
+          A
+            <span class="inline-flex max-h-14 md:max-h-24 items-center -mx-2 lg:-mx-3 px-2 lg:px-3 py-1 rounded-lg leading-relaxed lg:leading-normal bg-green-500/25"
+            >
+              UI Library
+            </span>
+          for
+          <br />
+
+          <ClientOnly>
+            <Typed :options="options">
+              <span class="typing"/>
+            </Typed>
+            <template #fallback>
+              <span>Flawless Devs</span>
+            </template>
+          </ClientOnly>
+
+        </UHeader>
+
+        <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base md:text-lg text-gray-600 font-medium lg:w-[36rem]">
+          Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
+        </UText>
+
+        <URow align="stretch" justify="center" class="mt-4 lg:mt-11 sm:flex-row">
+          <!--
+          TODO: Add vue/nuxt switcher
+          <UToggle model-value="vue" size="sm" variant="secondary">
+            <UToggleItem value="vue">Vue</UToggleItem>
+            <UToggleItem value="nuxt">Nuxt</UToggleItem>
+          </UToggle>
+          -->
+          <UInput
+            :model-value="installCommand"
+            readonly
+            class="w-full sm:max-w-[16rem]"
+            :config="{input: 'h-[37px]'}"
           >
-            UI Library
-          </span>
-        for
-        <br />
+            <template #right>
+              <UIcon
+                v-tooltip="`Copy to clipboard`"
+                :name="isCopyTimeout ? 'check' : 'content_copy'"
+                size="xs"
+                color="gray"
+                interactive
+                @click="onClickCopy"
+              />
+            </template>
+          </UInput>
 
-        <ClientOnly>
-          <Typed :options="options">
-            <span class="typing"/>
-          </Typed>
-          <template #fallback>
-            <span>Flawless Devs</span>
-          </template>
-        </ClientOnly>
+          <ULink
+            href="https://docs.vueless.com"
+            target="_blank"
+            :config="getStartedLinkConfig"
+          >
+            <UButton right-icon="arrow_forward" size="sm" label="Get Started" block />
+          </ULink>
+        </URow>
+      </UCol>
+    </div>
 
-      </UHeader>
+    <VuelessComponents />
 
-      <UText align="center" class="mt-4 whitespace-break-spaces sm:text-base md:text-lg text-gray-600 font-medium lg:w-[36rem]">
-        Endless collection. Limitless customisation. Stressless coding. All the stuff you need for your next Vue.js app.
-      </UText>
-
-      <URow align="stretch" justify="center" class="mt-4 lg:mt-11 sm:flex-row">
-        <!--
-        TODO: Add vue/nuxt switcher
-        <UToggle model-value="vue" size="sm" variant="secondary">
-          <UToggleItem value="vue">Vue</UToggleItem>
-          <UToggleItem value="nuxt">Nuxt</UToggleItem>
-        </UToggle>
-        -->
-
-        <UInput
-          :model-value="installCommand"
-          readonly
-          class="w-full sm:max-w-[16rem]"
-          :config="{input: 'h-[37px]'}"
-        >
-          <template #right>
-            <UIcon
-              v-tooltip="`Copy to clipboard`"
-              :name="isCopyTimeout ? 'check' : 'content_copy'"
-              size="xs"
-              color="gray"
-              interactive
-              @click="onClickCopy"
-            />
-          </template>
-        </UInput>
-
-        <ULink
-          href="https://docs.vueless.com"
-          target="_blank"
-          :config="getStartedLinkConfig"
-        >
-          <UButton color="grayscale" right-icon="arrow_forward" size="sm" label="Get Started" block />
-        </ULink>
-      </URow>
-    </UCol>
+    <DefaultFooter />
   </div>
 </template>
 
 <script setup lang="ts">
 import { Typed } from "@duskmoon/vue3-typed-js";
 import type { TypedOptions } from "@duskmoon/vue3-typed-js";
+
+import DefaultHeader from "~/layouts/Default/Header.vue";
+import DefaultFooter from "~/layouts/Default/Footer.vue";
+import VuelessComponents from "~/components/VuelessComponents.vue";
 
 interface VuelessPackage {
 version: string;

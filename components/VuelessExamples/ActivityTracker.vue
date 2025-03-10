@@ -2,7 +2,6 @@
   <UCard
     title="Set Goal"
     description="Define your daily activity target."
-    :config="{ content: 'flex flex-col gap-4' }"
   >
     <UInputNumber
       v-model="count"

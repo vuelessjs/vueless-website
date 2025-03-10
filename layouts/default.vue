@@ -26,25 +26,13 @@
         </div>
       </ClientOnly>
 
-      <div
-        class="
-          mx-auto min-h-screen max-w-screen-2xl px-4 sm:px-8 flex flex-col justify-between
-        "
-      >
-        <DefaultHeader />
+      <slot />
 
-        <slot />
-
-        <VuelessComponents />
-
-        <DefaultFooter />
-      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import VuelessComponents from "~/pages/VuelessComponents.vue";
 
 const lessTexts = [
   "Less worry, more peace ☮️",
