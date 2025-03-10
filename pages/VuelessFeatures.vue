@@ -1,14 +1,14 @@
 <template>
   <UCol align="center" class="gap-4 lg:gap-12">
-    <UHeader class="font-bold text-4xl md:text-5xl">Features</UHeader>
+    <UHeader class="font-bold text-4xl sm:text-5xl">Features</UHeader>
     <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap gap-4 lg:gap-8 lg:grid lg:grid-cols-6">
       <UCard
         :config="{
-          wrapper: 'hover:border-gray-300 px-0 pt-0 md:min-h-52 overflow-hidden relative col-span-4 md:p-8',
-          content: 'flex flex-col-reverse md:flex-row md:items-center md:justify-start h-full',
+          wrapper: 'hover:border-gray-300 md:min-h-52 max-sm:min-h-60 overflow-hidden relative col-span-4 !p-8',
+          content: 'flex flex-row items-center justify-start h-full',
         }"
       >
-        <UText :config="textConfig" class="pl-4 sm:pl-6 md:px-0">
+        <UText :config="textConfig">
           Limitless
           <ULink
             label="customization"
@@ -16,21 +16,20 @@
             href="https://docs.vueless.com/component-customization/general"
             target="_blank"
             underlined
-            class="text-xl md:text-2xl"
+            class="text-xl sm:text-2xl"
           />
           via global or local component configs.
         </UText>
-        <img src="../assets/images/config-full.png" alt="config" class="md:hidden w-full block object-cover object-top h-1/2 mb-5" />
         <img
           src="../assets/images/config.png"
           alt="config"
           class="
-            h-80 hidden md:block md:absolute md:-top-4 md:-right-12 md:rotate-[7deg]
+            h-80 absolute -top-4 max-[500px]:-right-52 -right-32 sm:-right-12 rotate-[7deg]
             lg:h-[23rem] lg:-top-6 lg:-right-28 xl:-right-4
           "
         />
       </UCard>
-      <UCard class="col-span-2 sm:p-6 md:p-8 hover:border-gray-300 md:min-h-52">
+      <UCard class="col-span-2 !p-8 hover:border-gray-300 md:min-h-52 max-sm:min-h-60">
         <UCol gap="xl" no-mobile class="gap-4 lg:gap-6">
           <div class="flex">
             <UButton
@@ -58,7 +57,7 @@
               href="https://docs.vueless.com/global-customization/dark-mode"
               target="_blank"
               underlined
-              class="text-xl md:text-2xl"
+              class="text-xl sm:text-2xl"
             />
             modes out of the box.
           </UText>
@@ -69,7 +68,7 @@
     <URow justify="center" align="stretch" gap="2xl" class="flex flex-wrap gap-4 lg:gap-8 lg:grid lg:grid-cols-6">
       <UCard
         :config="{
-          wrapper: 'col-span-2 sm:p-6 md:p-8 hover:border-gray-300 md:min-h-52',
+          wrapper: 'col-span-2 !p-8 hover:border-gray-300 md:min-h-52 max-sm:min-h-60',
           content: 'flex flex-col items-start gap-4'
         }"
       >
@@ -82,7 +81,7 @@
             href="https://docs.vueless.com/global-customization/colors"
             target="_blank"
             underlined
-            class="text-xl md:text-2xl"
+            class="text-xl sm:text-2xl"
           />
           palettes with dynamic change.
         </UText>
@@ -95,22 +94,14 @@
             href="https://docs.vueless.com/installation/storybook"
             target="_blank"
             underlined
-            class="text-xl md:text-2xl"
+            class="text-xl sm:text-2xl"
           />
           preset for effortless component styling in isolation.
         </UText>
         <img
-          src="../assets/images/storybook-icon.png"
-          alt="storybook"
-          class="w-16 md:hidden drop-shadow-[0_4px_10px_rgba(255,255,255,0.8)]"
-        />
-        <img
           src="../assets/images/storybook-bg.png"
           alt="storybook"
-          class="
-            hidden md:absolute top-auto right-0 -mt-16 -ml-6 md:-ml-0
-            md:block md:-mt-0 md:-right-8 xl:-right-2
-          "
+          class="absolute top-auto max-[450px]:-right-32 -right-20 sm:right-0 h-80 xl:h-96 xl:-right-2"
         />
       </UCard>
     </URow>
@@ -125,31 +116,23 @@
             href="https://www.typescriptlang.org/docs/"
             target="_blank"
             underlined
-            class="text-xl md:text-2xl"
+            class="text-xl sm:text-2xl"
           />
           support with types and tooling assistance.
         </UText>
         <img
-          src="../assets/svg/ts-logo-mobile.svg"
-          alt="typescript"
-          class="md:hidden max-h-16"
-        />
-        <img
           src="../assets/svg/ts-logo.svg"
           alt="typescript"
-          class="
-            hidden md:block right-5 h-16 sm:h-24 md:h-auto -top-4 md:-top-1
-            sm:-mt-8 md:-mt-0 md:absolute
-          "
+          class="max-w-[50%] absolute top-0 right-4 sm:top-0 sm:right-8"
         />
       </UCard>
-      <UCard class="col-span-2 sm:p-6 md:p-8 hover:border-gray-300 md:min-h-52">
+      <UCard class="col-span-2 !p-8 hover:border-gray-300 md:min-h-52">
         <UCol justify="between">
-          <div class="flex flex-wrap max-md:justify-end gap-2 md:gap-6">
+          <div class="flex flex-wrap max-h-[72px] gap-6 overflow-hidden">
             <UIcon
-              v-for="(item, index) in filteredIcons"
+              v-for="(icon, index) in icons"
               :key="index"
-              :name="item.icon"
+              :name="icon.icon"
               color="green"
             />
           </div>
@@ -161,7 +144,7 @@
               href="https://docs.vueless.com/svg-icons/general-usage"
               target="_blank"
               underlined
-              class="text-xl md:text-2xl"
+              class="text-xl sm:text-2xl"
             />
             from top icon libraries.
           </UText>
@@ -172,10 +155,6 @@
 </template>
 
 <script setup>
-import { useWindowSize } from "@vueuse/core";
-
-const { width } = useWindowSize();
-
 const buttonConfig = {
   centerIcon: {
     defaults: {
@@ -187,11 +166,18 @@ const buttonConfig = {
 }
 
 const textConfig = {
-  wrapper: "font-semibold !text-xl md:!text-2xl md:basis-[39%]",
+  wrapper: {
+    base: "font-semibold text-xl sm:text-2xl basis-[40%]",
+    variants: {
+      size: {
+        md: "text-xl",
+      },
+    },
+  },
 };
 
 const mainCardConfig = {
-  wrapper: "hover:border-gray-300 overflow-hidden relative col-span-4 sm:p-6 md:p-8 md:min-h-52",
+  wrapper: "hover:border-gray-300 overflow-hidden relative col-span-4 sm:p-6 !p-8 md:min-h-52 max-sm:min-h-60",
   content: "flex gap-4 flex-row items-center justify-between h-full",
 };
 
@@ -213,10 +199,4 @@ const icons = [
   { icon: "bookmark" },
   { icon: "archive" },
 ];
-
-const filteredIcons = computed(() => {
-  if (width.value < 640) return icons.slice(0, 8);
-
-  return icons;
-});
 </script>
