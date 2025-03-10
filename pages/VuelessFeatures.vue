@@ -16,7 +16,7 @@
             href="https://docs.vueless.com/component-customization/general"
             target="_blank"
             underlined
-            class="text-xl sm:text-2xl"
+            class="text-2xl"
           />
           via global or local component configs.
         </UText>
@@ -57,7 +57,7 @@
               href="https://docs.vueless.com/global-customization/dark-mode"
               target="_blank"
               underlined
-              class="text-xl sm:text-2xl"
+              class="text-2xl"
             />
             modes out of the box.
           </UText>
@@ -81,7 +81,7 @@
             href="https://docs.vueless.com/global-customization/colors"
             target="_blank"
             underlined
-            class="text-xl sm:text-2xl"
+            class="text-2xl"
           />
           palettes with dynamic change.
         </UText>
@@ -94,14 +94,14 @@
             href="https://docs.vueless.com/installation/storybook"
             target="_blank"
             underlined
-            class="text-xl sm:text-2xl"
+            class="text-2xl"
           />
           preset for effortless component styling in isolation.
         </UText>
         <img
           src="../assets/images/storybook-bg.png"
           alt="storybook"
-          class="absolute top-auto max-[450px]:-right-32 -right-20 sm:right-0 h-80 xl:h-96 xl:-right-2"
+          class="absolute top-auto max-[450px]:-right-40 -right-20 sm:right-0 h-80 xl:h-96 xl:-right-2"
         />
       </UCard>
     </URow>
@@ -116,14 +116,14 @@
             href="https://www.typescriptlang.org/docs/"
             target="_blank"
             underlined
-            class="text-xl sm:text-2xl"
+            class="text-2xl"
           />
           support with types and tooling assistance.
         </UText>
         <img
           src="../assets/svg/ts-logo.svg"
           alt="typescript"
-          class="max-w-[50%] absolute top-0 right-4 sm:top-0 sm:right-8"
+          class="max-sm:max-w-[40%] absolute top-0 right-4 sm:top-0 sm:right-8"
         />
       </UCard>
       <UCard class="col-span-2 !p-8 hover:border-gray-300 md:min-h-52">
@@ -144,7 +144,7 @@
               href="https://docs.vueless.com/svg-icons/general-usage"
               target="_blank"
               underlined
-              class="text-xl sm:text-2xl"
+              class="text-2xl"
             />
             from top icon libraries.
           </UText>
@@ -166,14 +166,7 @@ const buttonConfig = {
 }
 
 const textConfig = {
-  wrapper: {
-    base: "font-semibold text-xl sm:text-2xl basis-[40%]",
-    variants: {
-      size: {
-        md: "text-xl",
-      },
-    },
-  },
+  wrapper: "font-semibold !text-2xl basis-[40%]"
 };
 
 const mainCardConfig = {
