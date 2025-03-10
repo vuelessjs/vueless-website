@@ -1,5 +1,5 @@
 <template>
-  <footer class="pb-3 sm:mt-24 mt-0 sm:pb-6 lg:pb-11">
+  <footer class="pb-3 mt-28 sm:pb-6 lg:pb-11">
     <nav class="flex items-center">
       <ul class="text-sm flex items-center justify-center lg:justify-between max-sm:flex-col gap-5 w-full">
         <ul class="flex max-sm:flex-col-reverse items-center gap-3 lg:gap-10 lg:flex-row">
